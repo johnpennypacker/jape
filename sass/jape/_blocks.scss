@@ -27,11 +27,14 @@
 		border-color: var(--color__base_100);
 	}
 }
-.wp-block-button a {
+.wp-block-button a,
+.wp-block-button > div {
 	@extend .button;
 }
 .wp-block-button.is-style-outline a {
 	&:hover {
 		background: var(--color__base_800);
 	}
+}
+.block-editor-button-block-appender {
 }

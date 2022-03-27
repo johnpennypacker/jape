@@ -1,6 +1,6 @@
 /* Forms
 --------------------------------------------- */
-button,
+button:not(.block-editor-button-block-appender),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {

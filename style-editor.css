@@ -840,47 +840,6 @@ textarea {
 	width: 100%;
 }
 
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-body {
-	margin: 0;
-	padding: 0;
-}
-
-header.site-header {
-	border-top: var(--type__size) solid var(--color__brand);
-	background-color: var(--color__brand);
-	color: var(--color__brand_fg);
-	margin: 0 0 calc(var(--type__size) * 1);
-	padding: 0 var(--type__size);
-}
-
-.site-title {
-	font-size: calc(var(--type__size) * 2);
-	font-family: var(--type__serif);
-	font-weight: bold;
-	line-height: 1.2;
-	margin: 0;
-}
-
-.site-header > div,
-.site-header > nav,
-.site-footer > div,
-main,
-.breadcrumbs {
-	max-width: 64ch;
-	margin: 0 auto;
-	padding: 0 var(--type__size);
-}
-
-footer.site-footer {
-	margin: 0;
-	padding: 1rem;
-	background-color: var(--color__base_100);
-	color: var(--color__base_900);
-}
-
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1336,4 +1295,4 @@ body {
 	text-decoration: underline;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style-editor.css.map */

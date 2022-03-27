@@ -50,6 +50,10 @@ function jape_setup() {
 	add_post_type_support( 'page', 'excerpt' );
 
 
+	add_theme_support('editor-styles');
+	add_editor_style( 'style-editor.css' );
+
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
