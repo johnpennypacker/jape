@@ -1,0 +1,94 @@
+/* Links
+--------------------------------------------- */
+a {
+	color: var(--color__brand);
+	transition: all .2s ease-in-out;
+}
+
+
+a:visited {
+	color: var(--color__base_100);
+}
+
+a:hover {
+	/* this is fun because it only works on block level elements */
+	transform: translateX(-1px)translateY(-1px);
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: var(--color__base_100);
+	text-decoration: none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+.site-header a,
+.site-header a:visited,
+.site-header a:hover,
+.site-header a:focus,
+.site-header a:active,
+.site-footer a,
+.site-footer a:visited,
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:active {
+	color: var(--color__brand_fg);
+}
+
+
+a {
+	color: var(--color__brand);
+	transition: all .2s ease-in-out;
+}
+
+a:hover {
+	background-color: var(--color__brand);
+	color: var(--color__base_900);
+}
+
+
+.continue {
+	position: relative;
+	&:before {
+		content: '';
+		display: block;
+		border-top: 2px solid var(--color__brand);
+		height: 0;
+		width: 0rem;
+		position: absolute;
+		transition: all .15s ease-in;
+		top: .575rem;
+		right: -1rem;
+		left: calc(100% + 1rem);
+	}
+	&:after {
+		content: '';
+		display: block;
+		border: 2px solid var(--color__brand);
+		border-width: 2px 2px 0 0;
+		transform: translateX(0) rotateZ(45deg);
+		transition: all .2s ease-in-out;
+		height: .5rem;
+		width: .5rem;
+		position: absolute;
+		top: .375rem;
+		right: -1rem;
+	}
+	&:hover {
+		&:before {
+			width: 1rem;
+		}
+		&:after {
+			transform: translateX(1rem) rotateZ(45deg);
+		}
+	}
+}

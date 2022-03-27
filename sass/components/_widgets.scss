@@ -1,0 +1,10 @@
+/* Widgets
+--------------------------------------------- */
+.widget {
+	margin: 0 0 var(--type__size);
+}
+
+.widget select {
+	max-width: 100%;
+}
+

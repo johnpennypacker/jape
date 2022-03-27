@@ -1,0 +1,37 @@
+.wp-block-cover,
+.wp-block-buttons,
+.wp-block-media-text {
+	margin: 0 0 calc(var(--type__size) * 1.5);
+}
+
+.wp-block-cover .wp-block-cover__inner-container .alignwide {
+	max-width: 80vw;
+	margin-left: 10vw;
+	margin-right: 10vw;
+}
+
+
+.button {
+	border: 2px solid;
+	border-color:  var(--color__brand);
+	border-radius: 3px;
+	background: var(--color__brand);
+	color: var(--color__base_900);
+	cursor: pointer;
+	font-size: var(--type__size);
+	line-height: 1;
+	padding: 0.6em 1em;
+	transition: all .2s ease-in-out;
+	&:hover {
+		background: var(--color__base_100);
+		border-color: var(--color__base_100);
+	}
+}
+.wp-block-button a {
+	@extend .button;
+}
+.wp-block-button.is-style-outline a {
+	&:hover {
+		background: var(--color__base_800);
+	}
+}

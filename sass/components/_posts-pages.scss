@@ -1,0 +1,40 @@
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0;
+}
+
+// body.hfeed article would do the trick as well
+.excerpt {
+	margin: 0 0 calc(var(--type__size) * 3);
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.entry-header {
+	margin: 0 0 calc(var(--type__size) * 1.5);
+}
+// .page-content,
+// .entry-content,
+// .entry-summary {
+// 	margin: 1.5em 0 0;
+// }
+
+.entry-footer {
+	margin: 0 0 calc(var(--type__size) * 1.5);
+	span {
+		display: inline-block;
+		margin-right: var(--type__size);
+	}
+}
+.page-links {
+	clear: both;
+	margin: 0 0 calc(var(--type__size) * 1.5);
+}

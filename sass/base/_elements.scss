@@ -1,0 +1,84 @@
+/* Elements
+--------------------------------------------- */
+body {
+	background: var(--color__base_900);
+}
+hr {
+	background-color: var(--color__base_600);
+	border: 0;
+	height: 1px;
+	margin-bottom: calc(var(--type__size) * 1.5);
+}
+
+ul,
+ol {
+	margin: 0 0 var(--type__size) calc(var(--type__size) * 1.5);
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: calc(var(--type__size) * 1.5);
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 calc(var(--type__size) * 1.5) calc(var(--type__size) * 1.5);
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: calc(var(--type__size) * 1) 0 calc(var(--type__size) * 1.5);
+}
+
+table {
+	border: 0;
+	border-collapse: collapse;
+	margin: 0 0 calc(var(--type__size) * 1.5);
+	width: 100%;
+}
+
+thead th,
+thead td {
+	border-bottom: 1px solid var(--color__base_100);
+}
+th,
+td {
+	border: 0;
+	margin: 0;
+	padding: calc(var(--type__size) * .5);
+	text-align: left;
+}
+th,
+tbody tr td {
+	background-color: var(--color__base_900);
+}
+tbody tr:nth-child(odd) td {
+	background-color: var(--color__base_800);
+}
+tfoot td {
+	border-top: 1px solid var(--color__base_100);
+	background-color: var(--color__base_900);
+}

@@ -1,0 +1,65 @@
+/*!
+Theme Name: jape
+Theme URI: http://underscores.me/
+Author: John Pennypacker
+Author URI: https://pennypacker.net/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: jape
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+
+jape is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+@import 'jape/fonts';
+@import 'jape/variables';
+@import 'jape/blocks';
+
+@import 'generic/normalize';
+
+@import 'base/typography';
+@import 'base/elements';
+@import 'base/links';
+@import 'base/forms';
+
+@import 'layouts/layouts';
+
+@import 'components/comments';
+@import 'components/navigation';
+@import 'components/posts-pages';
+@import 'components/widgets';
+@import 'components/media';
+@import 'components/captions';
+@import 'components/galleries';
+
+@import 'plugins/jetpack';
+
+@import 'utilities/accessibility';
+@import 'utilities/alignment';
+
+
+html {
+	background-color: var(--color_brand);
+}
+body {
+	background-color: var(--color__base_900);
+}
+.site-title {
+	font-weight: 400;
+	a:link,
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+}
