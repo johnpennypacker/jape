@@ -35,8 +35,13 @@
 				PluginDocumentSettingPanel,
 				{
 					name: 'jape-settings',
-					title: 'Jape Settings',
+					title: 'Visibility for title and image',
 				},
+				el(
+					'div',
+					{},
+					'Toggle the visibility on the page/post. Doesn‘t affect lists or previews.'
+				),
 				el(
 					PanelRow,
 					{},
@@ -71,7 +76,7 @@
  								// set the meta value
  								wp.data.dispatch('core/editor').editPost({meta: {_jape_show_featured_image: val }});
  								// set the state
- 								setShowTitle( ( state ) => ! state );
+ 								setShowImage( ( state ) => ! state );
  							},
 						},
 						''

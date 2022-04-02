@@ -37,7 +37,15 @@ if( is_singular() ) {
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php jape_post_thumbnail(); ?>
+	<?php
+		if ( is_singular() ) {
+			if ( jape_show_featured_image( $post ) ) {
+				jape_post_thumbnail();
+			}
+		} else {
+			jape_post_thumbnail();
+		}
+	?>
 
 	<div class="entry-content">
 		<?php
