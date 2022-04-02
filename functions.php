@@ -182,68 +182,6 @@ function jape_widgets_init() {
 add_action( 'widgets_init', 'jape_widgets_init' );
 
 
-
-function jape_editor_customizations() {
-	register_meta( 'post', '_jape_show_title', [
-		'auth_callback' => '__return_true',
-		'show_in_rest' => true,
-		'single' => true,
-		'type' => 'boolean',
-		'default' => true
-	] );
- 
-	register_meta( 'post', '_jape_show_featured_image', [
-		'auth_callback' => '__return_true',
-		'show_in_rest' => true,
-		'single' => true,
-		'type' => 'boolean',
-		'default' => true
-	] );
-}
-add_action( 'init', 'jape_editor_customizations' );
-
-function jape_editor_customizations_script() {
-	$file = '/js/editor-customizations.js';
-	wp_enqueue_script(
-		'jape-editor-customization', 
-		get_template_directory_uri() . $file, 
-		[ 'wp-edit-post' ],
-		filemtime( get_template_directory() . $file ),
-		FALSE
-	);
-}
-add_action( 'enqueue_block_editor_assets', 'jape_editor_customizations_script' );
-
-function jape_filter_script($tag, $handle, $src) {
-	// if not your script, do nothing and return original $tag
-	if ( 'jape-editor-customization' !== $handle ) {
-		return $tag;
-	}
-	// change the script tag by adding type="module" and return it.
-	$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
-	return $tag;
-}
-add_filter('script_loader_tag', 'jape_filter_script' , 10, 3);
-
-function jape_show_title( $post ) {
-	$out = TRUE;
-	$show = get_post_custom_values('_jape_show_title');
-	if( is_array( $show ) ) {
-		$out = $show[0];
-	}
-	return $out;
-}
-
-function jape_show_featured_image( $post ) {
-	$out = TRUE;
-	$show = get_post_custom_values('_jape_show_featured_image');
-	if( is_array( $show ) ) {
-		$out = $show[0];
-	}
-	return $out;
-}
-
-
 /**
  * Enqueue scripts and styles.
  */
@@ -288,6 +226,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Breadcrumb generator.
  */
 require get_template_directory() . '/inc/breadcrumbs.php';
+
+/**
+ * Custom metadata to toggle visibility of title and featured image.
+ */
+require get_template_directory() . '/inc/meta.php';
 
 /**
  * Load Jetpack compatibility file.
