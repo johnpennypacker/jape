@@ -5,6 +5,10 @@
  * @package jape
  */
 
+
+/**
+ * Adds custom meta data fields to all post types.
+ */
 function jape_register_meta() {
 	register_meta( 'post', '_jape_show_title', [
 		'auth_callback' => '__return_true',
@@ -24,6 +28,10 @@ function jape_register_meta() {
 }
 add_action( 'init', 'jape_register_meta' );
 
+
+/**
+ * Enqueues javascript to create metabox in the block editor
+ */
 function jape_meta_editor_script() {
 	$file = '/js/meta.js';
 	wp_enqueue_script(
@@ -36,6 +44,11 @@ function jape_meta_editor_script() {
 }
 add_action( 'enqueue_block_editor_assets', 'jape_meta_editor_script' );
 
+
+/**
+ * Checks the metadata to see if the title should appear.
+ * @return bool
+ */
 function jape_show_title( $post ) {
 	$out = TRUE;
 	$show = get_post_custom_values('_jape_show_title');
@@ -45,6 +58,10 @@ function jape_show_title( $post ) {
 	return $out;
 }
 
+/**
+ * Checks the metadata to see if the featured image should appear.
+ * @return bool
+ */
 function jape_show_featured_image( $post ) {
 	$out = TRUE;
 	$show = get_post_custom_values('_jape_show_featured_image');
