@@ -48,8 +48,7 @@ function jape_setup() {
 
 	// add the excerpt field to pages
 	add_post_type_support( 'page', 'excerpt' );
-
-
+	
 	add_theme_support('editor-styles');
 	add_editor_style( 'style-editor.css' );
 
@@ -185,7 +184,7 @@ add_action( 'widgets_init', 'jape_widgets_init' );
 
 
 function jape_editor_customizations() {
-	register_post_meta( '', '_jape_show_title', [
+	register_meta( 'post', '_jape_show_title', [
 		'auth_callback' => '__return_true',
 		'show_in_rest' => true,
 		'single' => true,
@@ -193,7 +192,7 @@ function jape_editor_customizations() {
 		'default' => true
 	] );
  
-	register_post_meta( '', '_jape_show_featured_image', [
+	register_meta( 'post', '_jape_show_featured_image', [
 		'auth_callback' => '__return_true',
 		'show_in_rest' => true,
 		'single' => true,
@@ -226,6 +225,23 @@ function jape_filter_script($tag, $handle, $src) {
 }
 add_filter('script_loader_tag', 'jape_filter_script' , 10, 3);
 
+function jape_show_title( $post ) {
+	$out = TRUE;
+	$show = get_post_custom_values('_jape_show_title');
+	if( is_array( $show ) ) {
+		$out = $show[0];
+	}
+	return $out;
+}
+
+function jape_show_featured_image( $post ) {
+	$out = TRUE;
+	$show = get_post_custom_values('_jape_show_featured_image');
+	if( is_array( $show ) ) {
+		$out = $show[0];
+	}
+	return $out;
+}
 
 
 /**
