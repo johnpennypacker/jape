@@ -7,6 +7,45 @@
 
 
 /**
+ * Add metadata defaults to the Customizer.
+ * @todo decide on whether there should be a set of site defaults and how to configure them.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function jape_metadata_customizer( $wp_customize ) {
+
+	$wp_customize->add_section(
+		'jape_metadata',
+		array(
+			'title'    => __( 'Metadata', 'jape' ),
+			'priority' => 200,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'jape_show_featured_image_default',
+		array(
+			'default'           => FALSE,
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'jape_show_featured_image_default',
+			array(
+				'section'     => 'jape_metadata',
+				'label'       => __( 'Show featured image by default', 'jape' ),
+				'description' => __( 'Sets a default for the site that can be changed on each page.', 'jape' ),
+				'type'        => 'checkbox',
+			)
+		)
+	);
+
+}
+// add_action( 'customize_register', 'jape_metadata_customizer' );
+
+
+/**
  * Adds custom meta data fields to all post types.
  */
 function jape_register_meta() {

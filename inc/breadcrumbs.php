@@ -20,7 +20,7 @@ function jape_breadcrumbs_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'jape_always_show_breadcrumbs',
+		'jape_show_breadcrumbs_on_front',
 		array(
 			'default'           => FALSE,
 		)
@@ -28,11 +28,11 @@ function jape_breadcrumbs_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'jape_always_show_breadcrumbs',
+			'jape_show_breadcrumbs_on_front',
 			array(
 				'section'     => 'jape_breadcrumbs',
-				'label'       => __( 'Always show breadcrumbs', 'jape' ),
-				'description' => __( 'Shows the breadcrumbs even on the root page.', 'jape' ),
+				'label'       => __( 'Show breadcrumbs on the front page', 'jape' ),
+// 				'description' => __( 'Shows the breadcrumbs even on the root page.', 'jape' ),
 				'type'        => 'checkbox',
 			)
 		)
@@ -141,8 +141,9 @@ function jape_breadcrumbs() {
 		'href' => get_site_url(),
 	);
 	
-	$url = jape_get_current_path();
-	if ( empty ( $url ) && ! get_theme_mod( 'jape_always_show_breadcrumbs' ) ) {
+
+	$url = jape_get_current_path();	
+	if ( empty ( $url ) && ! get_theme_mod( 'jape_show_breadcrumbs_on_front' ) ) {
 		// there's nothing to put into the breadcrumbs, we're at the root site
 		return;
 	}
