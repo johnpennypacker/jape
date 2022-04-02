@@ -18,15 +18,40 @@
 		render: settingsPanel,
 		//scope: 'my-page',
 	});
+	
+// 	wp.domReady(
+// 		() => {
+// 			titleVisibility();
+// 		}
+// 	);
+// 	
+// 	
+	
+	
+	function titleVisibility() {
+		var v = wp.data.select('core/editor').getEditedPostAttribute('meta')._jape_show_title;
+		var el = document.querySelector('.edit-post-visual-editor__post-title-wrapper');
+		if( true == v ) {
+			el.style.opacity = '1';
+		} else {
+			el.style.opacity = '.2';
+		}
+	}
 
 
 	/**
 	 * the render function
 	 */
 	function settingsPanel() {
-		
+			
 		const [ showTitle, setShowTitle ] = useState( wp.data.select('core/editor').getEditedPostAttribute('meta')._jape_show_title );
 		const [ showImage, setShowImage ] = useState( wp.data.select('core/editor').getEditedPostAttribute('meta')._jape_show_featured_image );
+		const postType = wp.data.select('core/editor').getCurrentPostType();
+
+		window._wpLoadBlockEditor.then( function() {
+			titleVisibility();
+		});
+		
 		
 		return el(
 			Fragment,
@@ -40,7 +65,7 @@
 				el(
 					'div',
 					{},
-					'Toggle the visibility on the page/post. Doesn‘t affect lists or previews.'
+					'Toggle visibility on the ' + postType + '. Doesn‘t affect lists or previews.'
 				),
 				el(
 					PanelRow,
@@ -57,6 +82,8 @@
  								wp.data.dispatch('core/editor').editPost({meta: {_jape_show_title: val }});
  								// set the state
  								setShowTitle( ( state ) => ! state );
+ 								
+ 								titleVisibility(); 								
  							},
 						},
 						''
