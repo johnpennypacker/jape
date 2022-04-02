@@ -182,6 +182,52 @@ function jape_widgets_init() {
 }
 add_action( 'widgets_init', 'jape_widgets_init' );
 
+
+
+function jape_editor_customizations() {
+	register_post_meta( '', '_jape_show_title', [
+		'auth_callback' => '__return_true',
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'boolean',
+		'default' => true
+	] );
+ 
+	register_post_meta( '', '_jape_show_featured_image', [
+		'auth_callback' => '__return_true',
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'boolean',
+		'default' => true
+	] );
+}
+add_action( 'init', 'jape_editor_customizations' );
+
+function jape_editor_customizations_script() {
+	$file = '/js/editor-customizations.js';
+	wp_enqueue_script(
+		'jape-editor-customization', 
+		get_template_directory_uri() . $file, 
+		[ 'wp-edit-post' ],
+		filemtime( get_template_directory() . $file ),
+		FALSE
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'jape_editor_customizations_script' );
+
+function jape_filter_script($tag, $handle, $src) {
+	// if not your script, do nothing and return original $tag
+	if ( 'jape-editor-customization' !== $handle ) {
+		return $tag;
+	}
+	// change the script tag by adding type="module" and return it.
+	$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+	return $tag;
+}
+add_filter('script_loader_tag', 'jape_filter_script' , 10, 3);
+
+
+
 /**
  * Enqueue scripts and styles.
  */

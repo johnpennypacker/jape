@@ -150,6 +150,11 @@ input:hover[type="submit"] {
 	background: var(--color__base_800);
 }
 
+.blocks-shortcode__textarea {
+	font-family: var(--type__mono);
+	font-size: calc(var(--type__size) * .85);
+}
+
 /* Normalize
 --------------------------------------------- */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
