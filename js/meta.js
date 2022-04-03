@@ -30,25 +30,26 @@
 			el.style.opacity = '.2';
 		}
 	}
-	
-	function updateFeaturedImagePreview(img, obj) {
-		img.src = obj.source_url;
-	}
-	
-	function createFeaturedImagePreview() {
-		var el = document.querySelector('.edit-post-visual-editor__post-title-wrapper');
-		var img, id = 'jape-featured-image-preview';
-		img = document.getElementById(id);
-		if( ! img ) {
-			img = document.createElement('img');
-			img.id = id;
-			img.style.display = 'block';
-			img.style.marginBottom = '2rem';		
-			el.parentNode.insertBefore(img, el.nextSibling);
+
+	function featuredImageVisibility() {
+
+		var v = wp.data.select('core/editor').getEditedPostAttribute('meta')._jape_show_featured_image;		
+		var blocks = wp.data.select( 'core/block-editor' ).getBlocks();
+				
+		if( true == v ) {
+			if('core/post-featured-image' !== blocks[0].name) {
+				newBlock = wp.blocks.createBlock('core/post-featured-image', { });
+				wp.data.dispatch('core/block-editor').insertBlocks(newBlock, 0);
+			} 
+		} else {
+			if('core/post-featured-image' === blocks[0].name) {
+				console.log('remove: ', blocks[0].clientId);
+				wp.data.dispatch('core/block-editor').removeBlock(blocks[0].clientId);
+			} 
 		}
-		return img;
 	}
 
+	
 
 	/**
 	 * the render function
@@ -60,27 +61,8 @@
 		const postType = wp.data.select('core/editor').getCurrentPostType();
 		
 		window._wpLoadBlockEditor.then( function() {
-
-			var img = createFeaturedImagePreview();
-
 			titleVisibility();
-
-			var imageId = wp.media.featuredImage.get();
-			var imageObject = wp.data.select('core').getMedia(imageId);
-			var previousFeaturedImage = imageObject;
-			wp.data.subscribe( function() {
-				imageObject = wp.data.select('core').getMedia(imageId);
-				if( typeof imageObject !== 'undefined' && imageObject !== previousFeaturedImage ) {
-					updateFeaturedImagePreview(img, imageObject);
-				}
-				previousFeaturedImage = imageObject;
-			});
-			if( showImage ) {
-				img.style.opacity = '1';
-			} else {
-				img.style.opacity = '.2';
-			}
-
+			featuredImageVisibility();
 		});
 		
 		return el(
@@ -108,7 +90,6 @@
 							checked: showTitle,
 							help: (showTitle) ? 'Title will display.' : 'Title will not appear as a heading.',
  							onChange: function (val) {
- 								titleVisibility(); 								
  								// set the meta value
  								wp.data.dispatch('core/editor').editPost({meta: {_jape_show_title: val }});
  								// set the state
