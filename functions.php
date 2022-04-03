@@ -182,6 +182,33 @@ function jape_widgets_init() {
 add_action( 'widgets_init', 'jape_widgets_init' );
 
 
+
+
+
+
+function jape_dps_output_template( $output, $original_atts, $image, $title, $date, $excerpt, $inner_wrapper, $content, $class, $author, $category_display_text ) {
+	ob_start();
+	get_template_part( 'template-parts/dps', '', array(
+		'output' => $output, 
+		'original_atts' => $original_atts, 
+		'image' => $image, 
+		'title' => $title, 
+		'date' => $date, 
+		'excerpt' => $excerpt, 
+		'inner_wrapper' => $inner_wrapper, 
+		'content' => $content, 
+		'class' => $class, 
+		'author' => $author, 
+		'category_display_text' => $category_display_text
+	));
+	$output = ob_get_clean();	
+	return $output;
+}
+//add_filter( 'display_posts_shortcode_output', 'jape_dps_output_template', 10, 11 );
+
+
+
+
 /**
  * Enqueue scripts and styles.
  */

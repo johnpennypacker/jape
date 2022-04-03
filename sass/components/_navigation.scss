@@ -2,7 +2,7 @@
 --------------------------------------------- */
 
 .breadcrumbs {
-	margin-bottom: calc(var(--type__size) * 3); 
+	margin-bottom: calc(var(--type__size) * 1.5); 
 	ol {
 		margin-left: 0;
 		padding-left: 0;
@@ -120,6 +120,7 @@ nav.main-navigation {
 
 	.main-navigation ul {
 		display: flex;
+		flex-wrap: wrap;
 	}
 }
 

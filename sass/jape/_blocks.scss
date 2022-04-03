@@ -43,3 +43,28 @@
 	font-family: var(--type__mono);
 	font-size: calc(var(--type__size) * .85);
 }
+
+.wp-block-query {
+	ul {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	li {
+		list-style: none;
+	}
+	figure {
+		margin-top: calc(var(--type__size) * .5);
+	}
+	.wp-block-post {
+		margin-bottom: calc(var(--type__size) * 4);
+		.alignleft {
+			margin-left: 0;
+		}
+	}
+	.wp-block-post-title {
+		clear: none;
+		a {
+			display: inline;
+		}
+	}
+}
