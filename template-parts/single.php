@@ -28,9 +28,9 @@
 	</header><!-- .entry-header -->
 
 	<?php
-		if ( jape_show_featured_image( $post ) ) {
-			jape_post_thumbnail();
-		}
+// 		if ( jape_show_featured_image( $post ) ) {
+// 			jape_post_thumbnail();
+// 		}
 	?>
 
 	<div class="entry-content">

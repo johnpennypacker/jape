@@ -11,6 +11,7 @@
   // extract($args);
   $inner_wrapper = $args['inner_wrapper'];  // this can be safer than extract() on everything
   $class = $args['class'];
+  $class[] = 'dps';
 
 	echo '<' . $inner_wrapper . ' class="' . implode( ' ', $class ) . '">';
 	get_template_part( 'template-parts/teaser', '', $args );

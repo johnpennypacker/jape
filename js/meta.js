@@ -20,6 +20,9 @@
 	});
 	
 	
+	/**
+	 * Dims or undims the title.
+	 */
 	function titleVisibility() {
 		var el = document.querySelector('.edit-post-visual-editor__post-title-wrapper');
 		var v = wp.data.select('core/editor').getEditedPostAttribute('meta')._jape_show_title;
@@ -31,6 +34,9 @@
 		}
 	}
 
+	/**
+	 * Adds (or removes a featured image block.
+	 */
 	function featuredImageVisibility() {
 
 		var v = wp.data.select('core/editor').getEditedPostAttribute('meta')._jape_show_featured_image;		
@@ -43,7 +49,6 @@
 			} 
 		} else {
 			if('core/post-featured-image' === blocks[0].name) {
-				console.log('remove: ', blocks[0].clientId);
 				wp.data.dispatch('core/block-editor').removeBlock(blocks[0].clientId);
 			} 
 		}
@@ -52,7 +57,7 @@
 	
 
 	/**
-	 * the render function
+	 * The render function.
 	 */
 	function settingsPanel() {
 			

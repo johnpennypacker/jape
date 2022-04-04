@@ -172,7 +172,7 @@ input:hover[type="submit"] {
 	margin-bottom: calc(var(--type__size) * 4);
 }
 
-.wp-block-query .wp-block-post .alignleft {
+.wp-block-query .wp-block-post .alignleft, .wp-block-query .wp-block-post .dps .image, .dps .wp-block-query .wp-block-post .image {
 	margin-left: 0;
 }
 
@@ -539,7 +539,7 @@ h1, .entry-title {
 	font-size: calc(var(--type__size) * 2);
 }
 
-h2 {
+h2, .dps .title {
 	font-size: calc(var(--type__size) * 1.7);
 }
 
@@ -559,8 +559,7 @@ h6 {
 	font-size: calc(var(--type__size) * 1);
 }
 
-h1,
-h2,
+h1, h2, .dps .title,
 h3,
 h4,
 h5,
@@ -572,7 +571,7 @@ h6 {
 	margin: 0 0 calc(var(--type__size) * 1.5);
 }
 
-p {
+p, .dps .excerpt {
 	margin: 0 0 calc(var(--type__size) * 1.5);
 }
 
@@ -1246,6 +1245,26 @@ nav.main-navigation li:not(:last-of-type) a {
 	display: block;
 }
 
+/* Display Posts Shortcode styles
+--------------------------------------------- */
+.dps .listing-item {
+	clear: left;
+	margin-bottom: calc(var(--type__size) * 4);
+}
+
+.dps .image {
+	margin-left: 0 !important;
+}
+
+.dps .title {
+	clear: none;
+}
+
+.dps .date,
+.dps .category-display {
+	display: block;
+}
+
 /* Accessibility
 --------------------------------------------- */
 /* Text meant only for screen readers. */
@@ -1289,7 +1308,7 @@ nav.main-navigation li:not(:last-of-type) a {
 
 /* Alignments
 --------------------------------------------- */
-html .site .alignleft {
+html .site .alignleft, html .site .dps .image, .dps html .site .image {
 	/*rtl:ignore*/
 	float: left;
 	/*rtl:ignore*/
@@ -1319,7 +1338,7 @@ html .site .alignright {
 	margin-left: calc(var(--type__size)*1.5);
 }
 
-html .wp-block-columns .alignleft {
+html .wp-block-columns .alignleft, html .wp-block-columns .dps .image, .dps html .wp-block-columns .image {
 	margin-left: 0;
 }
 

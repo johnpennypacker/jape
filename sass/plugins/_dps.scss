@@ -1,0 +1,25 @@
+/* Display Posts Shortcode styles
+--------------------------------------------- */
+
+.dps {
+	.listing-item {
+		clear: left;
+		margin-bottom: calc(var(--type__size) * 4);
+	}
+	.image {
+		@extend .alignleft;
+		margin-left: 0 !important;
+	}
+	.title {
+		@extend h2;
+		clear: none;
+	}
+	.excerpt{
+		@extend p;
+	}
+	.date,
+	.category-display {
+		display: block;
+	}
+
+}

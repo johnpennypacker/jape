@@ -53,6 +53,7 @@ function jape_setup() {
 	add_editor_style( 'style-editor.css' );
 
 
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -127,6 +128,21 @@ function jape_setup() {
 }
 add_action( 'after_setup_theme', 'jape_setup' );
 
+
+
+/**
+ * Loads customizer styles in the block editor.
+ * but it doesn't auto-prefix selectors, so it styles the chrome too.  :(
+ */
+// function jape_add_customizer_styles_to_block_editor() {
+// 	wp_register_style( 'jape-customizer-styles', false );
+// 	wp_enqueue_style( 'jape-customizer-styles' );
+// 	wp_add_inline_style( 'jape-customizer-styles', wp_get_custom_css() );
+// }
+// add_action( 'enqueue_block_editor_assets', 'jape_add_customizer_styles_to_block_editor', 100 );
+
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -182,33 +198,6 @@ function jape_widgets_init() {
 add_action( 'widgets_init', 'jape_widgets_init' );
 
 
-
-
-
-
-function jape_dps_output_template( $output, $original_atts, $image, $title, $date, $excerpt, $inner_wrapper, $content, $class, $author, $category_display_text ) {
-	ob_start();
-	get_template_part( 'template-parts/dps', '', array(
-		'output' => $output, 
-		'original_atts' => $original_atts, 
-		'image' => $image, 
-		'title' => $title, 
-		'date' => $date, 
-		'excerpt' => $excerpt, 
-		'inner_wrapper' => $inner_wrapper, 
-		'content' => $content, 
-		'class' => $class, 
-		'author' => $author, 
-		'category_display_text' => $category_display_text
-	));
-	$output = ob_get_clean();	
-	return $output;
-}
-//add_filter( 'display_posts_shortcode_output', 'jape_dps_output_template', 10, 11 );
-
-
-
-
 /**
  * Enqueue scripts and styles.
  */
@@ -258,6 +247,11 @@ require get_template_directory() . '/inc/breadcrumbs.php';
  * Custom metadata to toggle visibility of title and featured image.
  */
 require get_template_directory() . '/inc/meta.php';
+
+/**
+ * Custom settings for Display Posts Shortcode plugin.
+ */
+require get_template_directory() . '/inc/dps.php';
 
 /**
  * Load Jetpack compatibility file.

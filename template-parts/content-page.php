@@ -18,7 +18,9 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php jape_post_thumbnail(); ?>
+	<?php 
+	// jape_post_thumbnail();
+	?>
 
 	<div class="entry-content">
 		<?php
