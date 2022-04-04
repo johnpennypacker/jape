@@ -47,7 +47,7 @@ function jape_metadata_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'jape_show_featured_image_default',
 		array(
-			'default'           => FALSE,
+			'default'           => TRUE,
 		)
 	);
 	$wp_customize->add_control(
@@ -95,7 +95,7 @@ function jape_register_meta() {
 		'show_in_rest' => true,
 		'single' => true,
 		'type' => 'boolean',
-		'default' => true
+		'default' => jape_show_title()
 	] );
  
 	register_meta( 'post', '_jape_show_featured_image', [
@@ -103,7 +103,7 @@ function jape_register_meta() {
 		'show_in_rest' => true,
 		'single' => true,
 		'type' => 'boolean',
-		'default' => true
+		'default' => jape_show_featured_image()
 	] );
 }
 add_action( 'init', 'jape_register_meta' );
@@ -129,11 +129,13 @@ add_action( 'enqueue_block_editor_assets', 'jape_meta_editor_script' );
  * Checks the metadata to see if the title should appear.
  * @return bool
  */
-function jape_show_title( $post ) {
+function jape_show_title( $post=NULL ) {
 	$out = get_theme_mod( 'jape_show_title_default', TRUE );
-	$show = get_post_custom_values('_jape_show_title');
-	if( is_array( $show ) ) {
-		$out = $show[0];
+	if( NULL !== $post ) {
+		$show = get_post_custom_values('_jape_show_title');
+		if( is_array( $show ) ) {
+			$out = $show[0];
+		}
 	}
 	return $out;
 }
@@ -142,11 +144,13 @@ function jape_show_title( $post ) {
  * Checks the metadata to see if the featured image should appear.
  * @return bool
  */
-function jape_show_featured_image( $post ) {
+function jape_show_featured_image( $post=NULL ) {
 	$out = get_theme_mod( 'jape_show_featured_image_default', TRUE );
-	$show = get_post_custom_values('_jape_show_featured_image');
-	if( is_array( $show ) ) {
-		$out = $show[0];
+	if( NULL !== $post ) {
+		$show = get_post_custom_values('_jape_show_featured_image');
+		if( is_array( $show ) ) {
+			$out = $show[0];
+		}
 	}
 	return $out;
 }
