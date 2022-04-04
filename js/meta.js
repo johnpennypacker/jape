@@ -41,16 +41,29 @@
 
 		var v = wp.data.select('core/editor').getEditedPostAttribute('meta')._jape_show_featured_image;		
 		var blocks = wp.data.select( 'core/block-editor' ).getBlocks();
+		
+		// find the first instance of featured image
+		var fImage = null;
+		for(var i=0; i<blocks.length; i++) {
+			if(null == fImage) {
+				if('core/post-featured-image' === blocks[i].name) {
+					fImage = blocks[i];
+				}
+			}
+		}
+		
 				
 		if( true == v ) {
 			if('core/post-featured-image' !== blocks[0].name) {
-				newBlock = wp.blocks.createBlock('core/post-featured-image', { });
-				wp.data.dispatch('core/block-editor').insertBlocks(newBlock, 0);
+				if(null == fImage) {
+					newBlock = wp.blocks.createBlock('core/post-featured-image', { });
+					wp.data.dispatch('core/block-editor').insertBlocks(newBlock, 0);
+				}
 			} 
 		} else {
-			if('core/post-featured-image' === blocks[0].name) {
-				wp.data.dispatch('core/block-editor').removeBlock(blocks[0].clientId);
-			} 
+			if(null != fImage) {
+				wp.data.dispatch('core/block-editor').removeBlock(fImage.clientId);
+			}
 		}
 	}
 

@@ -48,6 +48,7 @@ function jape_setup() {
 
 	// add the excerpt field to pages
 	add_post_type_support( 'page', 'excerpt' );
+	//add_post_type_support( 'page', 'custom-fields' );
 	
 	add_theme_support('editor-styles');
 	add_editor_style( 'style-editor.css' );

@@ -7,6 +7,28 @@
 
 
 /**
+ * Adds default templates to posts and pages
+ */
+function jape_register_template() {
+
+	$starter_template = array(
+		array( 'core/post-featured-image'),
+		array( 'core/paragraph', array(
+			'placeholder' => 'A good introduction',
+			'fontSize' => 'large'
+		))
+	);
+
+	$page = get_post_type_object( 'page' );
+	$page->template = $starter_template;
+	
+	$post = get_post_type_object( 'post' );
+	$post->template = $starter_template;
+}
+add_action( 'init', 'jape_register_template' );
+
+
+/**
  * Add metadata defaults to the Customizer.
  * @todo decide on whether there should be a set of site defaults and how to configure them.
  *
@@ -18,7 +40,7 @@ function jape_metadata_customizer( $wp_customize ) {
 		'jape_metadata',
 		array(
 			'title'    => __( 'Metadata', 'jape' ),
-			'priority' => 200,
+			'priority' => 150,
 		)
 	);
 
@@ -41,8 +63,27 @@ function jape_metadata_customizer( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'jape_show_title_default',
+		array(
+			'default'           => TRUE,
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'jape_show_title_default',
+			array(
+				'section'     => 'jape_metadata',
+				'label'       => __( 'Show title by default', 'jape' ),
+				'description' => __( 'Sets a default for the site that can be changed on each page.', 'jape' ),
+				'type'        => 'checkbox',
+			)
+		)
+	);
+
 }
-// add_action( 'customize_register', 'jape_metadata_customizer' );
+add_action( 'customize_register', 'jape_metadata_customizer' );
 
 
 /**
@@ -89,7 +130,7 @@ add_action( 'enqueue_block_editor_assets', 'jape_meta_editor_script' );
  * @return bool
  */
 function jape_show_title( $post ) {
-	$out = TRUE;
+	$out = get_theme_mod( 'jape_show_title_default', TRUE );
 	$show = get_post_custom_values('_jape_show_title');
 	if( is_array( $show ) ) {
 		$out = $show[0];
@@ -102,7 +143,7 @@ function jape_show_title( $post ) {
  * @return bool
  */
 function jape_show_featured_image( $post ) {
-	$out = TRUE;
+	$out = get_theme_mod( 'jape_show_featured_image_default', TRUE );
 	$show = get_post_custom_values('_jape_show_featured_image');
 	if( is_array( $show ) ) {
 		$out = $show[0];

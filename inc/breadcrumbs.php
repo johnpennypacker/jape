@@ -15,7 +15,7 @@ function jape_breadcrumbs_customizer( $wp_customize ) {
 		'jape_breadcrumbs',
 		array(
 			'title'    => __( 'Breadcrumbs', 'jape' ),
-			'priority' => 200,
+			'priority' => 70,
 		)
 	);
 
