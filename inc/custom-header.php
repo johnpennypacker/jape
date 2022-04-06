@@ -25,7 +25,7 @@ function jape_custom_header_setup() {
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
-				'height'             => 250,
+				'height'             => '',
 				'flex-height'        => true,
 				'wp-head-callback'   => 'jape_header_style',
 			)
@@ -33,6 +33,23 @@ function jape_custom_header_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'jape_custom_header_setup' );
+
+
+/**
+ * Loads customizer styles in the block editor.
+ * but it doesn't auto-prefix selectors, so it styles the chrome too.  :(
+ */
+function jape_add_custom_header_styles() {
+	if ( has_header_image() ) {
+		$header_image = get_theme_mod( 'header_image_data' );
+		$css = '.site-header { background-image: url(' . get_header_image() . '); min-height:' . $header_image->height . 'px;';
+		wp_register_style( 'jape-custom-header-image-styles', false );
+		wp_enqueue_style( 'jape-custom-header-image-styles' );
+		wp_add_inline_style( 'jape-custom-header-image-styles', $css );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'jape_add_custom_header_styles', 100 );
+
 
 if ( ! function_exists( 'jape_header_style' ) ) :
 	/**

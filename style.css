@@ -121,8 +121,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .button, .wp-block-button a,
-.wp-block-button > div, button:not(.block-editor-button-block-appender),
-input[type="button"],
+.wp-block-button > div, input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 2px solid;
@@ -138,8 +137,7 @@ input[type="submit"] {
 }
 
 .button:hover, .wp-block-button a:hover,
-.wp-block-button > div:hover, button:hover:not(.block-editor-button-block-appender),
-input:hover[type="button"],
+.wp-block-button > div:hover, input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"] {
 	background: var(--color__base_100);
@@ -882,11 +880,16 @@ body {
 }
 
 header.site-header {
-	border-top: var(--type__size) solid var(--color__brand);
 	background-color: var(--color__brand);
 	color: var(--color__brand_fg);
 	margin: 0 0 calc(var(--type__size) * 1);
-	padding: 0 var(--type__size);
+	padding: var(--type__size) var(--type__size) 0;
+	/** custom header image styles **/
+	background-position: 50% 50%;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
 .site-title {
@@ -905,6 +908,10 @@ main,
 	max-width: 64ch;
 	margin: 0 auto;
 	padding: 0 var(--type__size);
+}
+
+.site-title {
+	width: 64ch;
 }
 
 footer.site-footer {

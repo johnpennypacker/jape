@@ -7,11 +7,18 @@ body {
 	padding: 0;
 }
 header.site-header {
-	border-top: var(--type__size) solid var(--color__brand);
 	background-color: var(--color__brand);
 	color: var(--color__brand_fg);
 	margin: 0 0 calc(var(--type__size) * 1); 
-	padding: 0 var(--type__size);
+	padding: var(--type__size) var(--type__size) 0;
+
+	/** custom header image styles **/	
+	background-position: 50% 50%;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
 }
 
 .site-title {
@@ -30,6 +37,9 @@ main,
 	max-width: 64ch;
 	margin: 0 auto;
 	padding: 0 var(--type__size);
+}
+.site-title {
+	width: 64ch;
 }
 
 

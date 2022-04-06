@@ -24,8 +24,12 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'jape' ); ?></a>
-<?php dynamic_sidebar( 'preheader' ); ?>
+	<?php dynamic_sidebar( 'preheader' ); ?>
+		
 	<header id="masthead" class="site-header">
+	<?php
+		//the_header_image_tag();
+	?>
 		<div class="site-branding">
 			<?php
 			the_custom_logo();

@@ -220,9 +220,9 @@ add_action( 'wp_enqueue_scripts', 'jape_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Header functions like opengraph and GTM.
+ * Head functions like opengraph and GTM.
  */
-require get_template_directory() . '/inc/header-functions.php';
+require get_template_directory() . '/inc/head-functions.php';
 
 /**
  * Custom template tags for this theme.

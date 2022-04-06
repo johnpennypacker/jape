@@ -121,8 +121,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .button, .wp-block-button a,
-.wp-block-button > div, button:not(.block-editor-button-block-appender),
-input[type="button"],
+.wp-block-button > div, input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 2px solid;
@@ -138,8 +137,7 @@ input[type="submit"] {
 }
 
 .button:hover, .wp-block-button a:hover,
-.wp-block-button > div:hover, button:hover:not(.block-editor-button-block-appender),
-input:hover[type="button"],
+.wp-block-button > div:hover, input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"] {
 	background: var(--color__base_100);
