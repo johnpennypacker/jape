@@ -8,7 +8,7 @@ Description: Description
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
-License: GNU General Public License v2 or later
+License: 
 License URI: LICENSE
 Text Domain: jape
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -182,52 +182,26 @@ input:hover[type="submit"] {
 	display: inline;
 }
 
-/*! This file is auto-generated */
-body, html {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+@keyframes shake {
+	25% {
+		transform: translateX(-20px);
+	}
+	75% {
+		transform: translateX(20px);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
-body {
-	background: #f0f0f1;
-	min-width: 0;
-	color: #3c434a;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 13px;
-	line-height: 1.4;
-}
-
-a {
-	color: #2271b1;
-	transition-property: border, background, color;
-	transition-duration: .05s;
-	transition-timing-function: ease-in-out;
-}
-
-a {
-	outline: 0;
-}
-
-a:active, a:hover {
-	color: #135e96;
-}
-
-a:focus {
-	color: #043959;
-	box-shadow: 0 0 0 1px #4f94d4, 0 0 2px 1px rgba(79, 148, 212, 0.8);
-}
-
-p, .dps .excerpt {
-	line-height: 1.5;
-}
-
-.login #login_error, .login .message, .login .success {
+.login #login_error,
+.login .message,
+.login .success {
 	border-left: 4px solid #72aee6;
-	padding: 12px;
+	padding: var(--type__size);
 	margin-left: 0;
-	margin-bottom: 20px;
-	background-color: #fff;
+	margin-bottom: calc(var(--type__size) * 1.5);
+	background-color: var(--color__base_900);
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 	word-wrap: break-word;
 }
@@ -240,14 +214,9 @@ p, .dps .excerpt {
 	border-left-color: #d63638;
 }
 
-#loginform p.submit, #loginform .dps .submit.excerpt, .dps #loginform .submit.excerpt, .login-action-lostpassword p.submit, .login-action-lostpassword .dps .submit.excerpt, .dps .login-action-lostpassword .submit.excerpt {
+.login #loginform p.submit, .login #loginform .dps .submit.excerpt, .dps .login #loginform .submit.excerpt, .login .login-action-lostpassword p.submit, .login .login-action-lostpassword .dps .submit.excerpt, .dps .login .login-action-lostpassword .submit.excerpt {
 	border: none;
 	margin: -10px 0 20px;
-}
-
-.login * {
-	margin: 0;
-	padding: 0;
 }
 
 .login .input::-ms-clear {
@@ -255,7 +224,7 @@ p, .dps .excerpt {
 }
 
 .login .pw-weak {
-	margin-bottom: 15px;
+	margin-bottom: var(--type__size);
 }
 
 .login .button.wp-hide-pw, .login .wp-block-button a.wp-hide-pw, .wp-block-button .login a.wp-hide-pw,
@@ -314,60 +283,19 @@ p, .dps .excerpt {
 	position: relative;
 }
 
-.no-js .hide-if-no-js {
-	display: none;
-}
-
 .login form {
-	margin-top: 20px;
-	margin-left: 0;
-	padding: 26px 24px 34px;
+	margin: calc(var(--type__size) * 1.5) 0 calc(var(--type__size) * 1.5);
+	padding: calc(var(--type__size) * 1.5) calc(var(--type__size) * 1.5) calc(var(--type__size) * 2);
 	font-weight: 400;
 	overflow: hidden;
-	background: #fff;
-	border: 1px solid #c3c4c7;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+	background: var(--color__base_900);
+	border: 1px solid var(--color__base_600);
 }
 
 .login form.shake {
 	animation: shake 0.2s cubic-bezier(0.19, 0.49, 0.38, 0.79) both;
 	animation-iteration-count: 3;
 	transform: translateX(0);
-}
-
-@keyframes shake {
-	25% {
-		transform: translateX(-20px);
-	}
-	75% {
-		transform: translateX(20px);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.login form.shake {
-		animation: none;
-		transform: none;
-	}
-}
-
-.login-action-confirm_admin_email #login {
-	width: 60vw;
-	max-width: 650px;
-	margin-top: -2vh;
-}
-
-@media screen and (max-width: 782px) {
-	.login-action-confirm_admin_email #login {
-		box-sizing: border-box;
-		margin-top: 0;
-		padding-left: 4vw;
-		padding-right: 4vw;
-		width: 100vw;
-	}
 }
 
 .login form .forgetmenot {
@@ -399,10 +327,6 @@ p, .dps .excerpt {
 	text-align: center;
 }
 
-.admin-email__later {
-	text-align: left;
-}
-
 .login form p.admin-email__details, .login form .dps .admin-email__details.excerpt, .dps .login form .admin-email__details.excerpt {
 	margin: 1.1em 0;
 }
@@ -412,6 +336,68 @@ p, .dps .excerpt {
 	color: #50575e;
 	font-weight: 400;
 	padding-bottom: .5em;
+	text-align: left;
+}
+
+.login label {
+	font-size: 14px;
+	line-height: 1.5;
+	display: inline-block;
+	margin-bottom: 3px;
+}
+
+.login .forgetmenot label,
+.login .pw-weak label {
+	line-height: 1.5;
+	vertical-align: baseline;
+}
+
+.login h1 {
+	text-align: center;
+}
+
+.login h1 a {
+	background-size: 84px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	height: 84px;
+	width: 84px;
+	margin: 0 auto 25px;
+	text-decoration: none;
+	text-indent: -9999px;
+	outline: 0;
+	overflow: hidden;
+	display: block;
+}
+
+.no-js .hide-if-no-js {
+	display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.login form.shake {
+		animation: none;
+		transform: none;
+	}
+}
+
+.login-action-confirm_admin_email #login {
+	width: 60vw;
+	max-width: 650px;
+	margin-top: -2vh;
+}
+
+@media screen and (max-width: 782px) {
+	.login-action-confirm_admin_email #login {
+		box-sizing: border-box;
+		margin-top: 0;
+		padding-left: 4vw;
+		padding-right: 4vw;
+		width: 100vw;
+	}
+}
+
+.admin-email__later {
 	text-align: left;
 }
 
@@ -434,43 +420,6 @@ p, .dps .excerpt {
 	padding: 0;
 }
 
-.login label {
-	font-size: 14px;
-	line-height: 1.5;
-	display: inline-block;
-	margin-bottom: 3px;
-}
-
-.login .forgetmenot label, .login .pw-weak label {
-	line-height: 1.5;
-	vertical-align: baseline;
-}
-
-.login h1 {
-	text-align: center;
-}
-
-.login h1 a {
-	background-image: url(../images/w-logo-blue.png?ver=20131202);
-	background-image: none, url(../images/wordpress-logo.svg?ver=20131107);
-	background-size: 84px;
-	background-position: center top;
-	background-repeat: no-repeat;
-	color: #3c434a;
-	height: 84px;
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 1.3;
-	margin: 0 auto 25px;
-	padding: 0;
-	text-decoration: none;
-	width: 84px;
-	text-indent: -9999px;
-	outline: 0;
-	overflow: hidden;
-	display: block;
-}
-
 #login {
 	width: 320px;
 	padding: 5% 0 0;
@@ -491,17 +440,9 @@ p, .dps .excerpt {
 	word-wrap: break-word;
 }
 
-.login #backtoblog a, .login #nav a {
+.login #backtoblog a,
+.login #nav a {
 	text-decoration: none;
-	color: #50575e;
-}
-
-.login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
-	color: #135e96;
-}
-
-.login #backtoblog a:focus, .login #nav a:focus, .login h1 a:focus {
-	color: #043959;
 }
 
 .login .privacy-policy-page-link {
@@ -530,7 +471,7 @@ p, .dps .excerpt {
 }
 
 .login form .input, .login form input[type=checkbox], .login input[type=text] {
-	background: #fff;
+	background: var(--color__base_900);
 }
 
 .js.login-action-rp input[type=password], .js.login-action-rp input[type=text] {
@@ -1855,6 +1796,21 @@ html {
 
 body {
 	background-color: var(--color__base_900);
+}
+
+.site-branding {
+	display: flex;
+	align-items: center;
+}
+
+.site-branding .custom-logo-link {
+	flex-grow: 1;
+	min-width: 100px;
+	margin: 0 var(--type__size) var(--type__size) 0;
+}
+
+.site-branding .site-name {
+	flex-grow: 3;
 }
 
 .site-title {

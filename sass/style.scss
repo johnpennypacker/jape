@@ -7,7 +7,7 @@ Description: Description
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
-License: GNU General Public License v2 or later
+License: 
 License URI: LICENSE
 Text Domain: jape
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -54,6 +54,21 @@ html {
 }
 body {
 	background-color: var(--color__base_900);
+}
+
+.site-branding {
+	display: flex;
+	align-items: center;
+	.custom-logo-link {
+		flex-grow: 1;
+		min-width: 100px;
+		margin: 0 var(--type__size) var(--type__size) 0;
+	}
+	.site-name {
+		flex-grow: 3;
+		
+	}
+
 }
 .site-title {
 	font-weight: 400;
