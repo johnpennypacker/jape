@@ -43,9 +43,9 @@ function jape_add_custom_header_styles() {
 	if ( has_header_image() ) {
 		$header_image = get_theme_mod( 'header_image_data' );
 		$css = '.site-header { background-image: url(' . get_header_image() . '); min-height:' . $header_image->height . 'px;';
-		wp_register_style( 'jape-custom-header-image-styles', false );
-		wp_enqueue_style( 'jape-custom-header-image-styles' );
-		wp_add_inline_style( 'jape-custom-header-image-styles', $css );
+		wp_register_style( 'jape-custom-header-image', false );
+		wp_enqueue_style( 'jape-custom-header-image' );
+		wp_add_inline_style( 'jape-custom-header-image', $css );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'jape_add_custom_header_styles', 100 );

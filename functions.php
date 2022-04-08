@@ -250,6 +250,11 @@ require get_template_directory() . '/inc/breadcrumbs.php';
 require get_template_directory() . '/inc/meta.php';
 
 /**
+ * Custom metadata to toggle visibility of title and featured image.
+ */
+require get_template_directory() . '/inc/admin-login.php';
+
+/**
  * Custom settings for Display Posts Shortcode plugin.
  */
 require get_template_directory() . '/inc/dps.php';
