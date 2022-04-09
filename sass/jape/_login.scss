@@ -18,7 +18,7 @@
 	#login_error,
 	.message,
 	.success {
-		border-left: 4px solid #72aee6;
+		border-left: 4px solid var(--color__message);
 		padding: var(--type__size);
 		margin-left: 0;
 		margin-bottom: calc(var(--type__size) * 1.5);
@@ -27,15 +27,15 @@
 		word-wrap:break-word
 	}
 	.success {
-		border-left-color:#00a32a
+		border-left-color: var(--color__success);
 	}
 
 	#login_error {
-		border-left-color:#d63638
+		border-left-color: var(--color__error);
 	}
 	#loginform p.submit, .login-action-lostpassword p.submit {
 			border: none;
-			margin: -10px 0 20px
+			margin: calc(var(--type__size) * .4) 0 calc(var(--type__size) * 1.25);
 	}
 
 	.input::-ms-clear {
@@ -49,24 +49,37 @@
 		background: 0 0;
 		border: 1px solid transparent;
 		box-shadow: none;
-		font-size: 14px;
+		font-size: calc(var(--type__size) * .9);
+		font-family: dashicons;
 		line-height: 2;
-		width: 2.5rem;
-		height: 2.5rem;
-		min-width: 40px;
-		min-height: 40px;
+		width: calc(var(--type__size) * 2.5);
+		height: calc(var(--type__size) * 2.5);
+		min-width: calc(var(--type__size) * 2.5);
+		min-height: calc(var(--type__size) * 2.5);
 		margin: 0;
-		padding: 5px 9px;
+		padding: calc(var(--type__size) * .3) calc(var(--type__size) * .6);
 		position: absolute;
 		right: 0;
 		top:0;
+		
+		.dashicons {
+			position: relative;
+			width: calc(var(--type__size) * 1.25);
+			height: calc(var(--type__size) * 1.25);
+			top: calc(var(--type__size) * .25);
+		}
+		span:before {
+			color: var(--color__base_400);
+		}
+
+
 		&:hover {
 			background:0 0
 		}
 		&:focus {
 			background: 0 0;
-			border-color: #3582c4;
-			box-shadow: 0 0 0 1px #3582c4;
+			border-color: var(--color__message);
+			box-shadow: 0 0 0 1px var(--color__message);
 			outline:2px solid transparent
 		}
 
@@ -75,12 +88,6 @@
 			box-shadow: none;
 			transform:none
 		}
-	}
-
-	.button.wp-hide-pw .dashicons {
-		width: 1.25rem;
-		height: 1.25rem;
-		top:.25rem
 	}
 
 	.wp-pwd {
@@ -134,11 +141,11 @@
 		border-bottom: 1px #f0f0f1 solid;
 		color: #50575e;
 		font-weight: 400;
-		padding-bottom: .5em;
+		padding-bottom: calc(var(--type__size) * .5);
 		text-align:left
 	}
 	label {
-		font-size: 14px;
+		font-size: calc(var(--type__size) * .9);
 		line-height: 1.5;
 		display: inline-block;
 		margin-bottom:3px
@@ -231,45 +238,49 @@
 	margin:auto
 }
 
-.login #backtoblog, .login #nav {
-	font-size: 13px;
-	padding:0 24px
+.login {
+	#backtoblog,
+	#nav {
+		font-size: calc(var(--type__size) * .85);
+		padding: 0 calc(var(--type__size) * 1.5);
+	}
+
+	#nav {
+		margin: calc(var(--type__size) * 1.5) 0 0;
+	}
+
+	#backtoblog {
+		margin: var(--type__size) 0;
+		word-wrap:break-word
+	}
+
+	#backtoblog a,
+	#nav a {
+		text-decoration: none;
+	}
+
+	.privacy-policy-page-link {
+		text-align: center;
+		width: 100%;
+		margin: calc(var(--type__size) * 3) 0 calc(var(--type__size) * 2);
+	}
+
+	form .input, input[type=password], input[type=text] {
+		font-size: calc(var(--type__size) * 1.5);
+		line-height: 1.33333333;
+		width: 100%;
+		border-width: .0625rem;
+		padding: .1875rem .3125rem;
+		margin: 0 6px var(--type__size) 0;
+		min-height: 40px;
+		max-height:none
+	}
+
+	input.password-input {
+		font-family: var(--type__mono);
+	}
 }
 
-.login #nav {
-	margin:24px 0 0
-}
-
-#backtoblog {
-	margin: 16px 0;
-	word-wrap:break-word
-}
-
-.login #backtoblog a,
-.login #nav a {
-	text-decoration: none;
-}
-
-.login .privacy-policy-page-link {
-	text-align: center;
-	width: 100%;
-	margin:3em 0 2em
-}
-
-.login form .input, .login input[type=password], .login input[type=text] {
-	font-size: 24px;
-	line-height: 1.33333333;
-	width: 100%;
-	border-width: .0625rem;
-	padding: .1875rem .3125rem;
-	margin: 0 6px 16px 0;
-	min-height: 40px;
-	max-height:none
-}
-
-.login input.password-input {
-	font-family:Consolas, Monaco, monospace
-}
 
 .js.login input.password-input, .js.login-action-rp form .input, .js.login-action-rp input[type=text] {
 	padding-right:2.5rem

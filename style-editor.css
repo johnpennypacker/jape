@@ -99,6 +99,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__accent_fg: #fff;
 	--color__highlight: #fdbd45;
 	--color__highlight_text: #000;
+	--color__message: var(--color__base_500);
+	--color__succcess: #00a32a;
+	--color__error: #d63638;
 }
 
 :root {

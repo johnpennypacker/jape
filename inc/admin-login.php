@@ -25,6 +25,8 @@ function jape_login_enqueues() {
 		wp_enqueue_style( 'jape-login-logo' );
 		wp_add_inline_style( 'jape-login-logo', $css );
 	}
+	
+	wp_enqueue_style( 'dashicons' );
 	wp_dequeue_style( 'login' );
 
 }

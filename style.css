@@ -99,6 +99,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__accent_fg: #fff;
 	--color__highlight: #fdbd45;
 	--color__highlight_text: #000;
+	--color__message: var(--color__base_500);
+	--color__succcess: #00a32a;
+	--color__error: #d63638;
 }
 
 :root {
@@ -197,7 +200,7 @@ input:hover[type="submit"] {
 .login #login_error,
 .login .message,
 .login .success {
-	border-left: 4px solid #72aee6;
+	border-left: 4px solid var(--color__message);
 	padding: var(--type__size);
 	margin-left: 0;
 	margin-bottom: calc(var(--type__size) * 1.5);
@@ -207,16 +210,16 @@ input:hover[type="submit"] {
 }
 
 .login .success {
-	border-left-color: #00a32a;
+	border-left-color: var(--color__success);
 }
 
 .login #login_error {
-	border-left-color: #d63638;
+	border-left-color: var(--color__error);
 }
 
 .login #loginform p.submit, .login #loginform .dps .submit.excerpt, .dps .login #loginform .submit.excerpt, .login .login-action-lostpassword p.submit, .login .login-action-lostpassword .dps .submit.excerpt, .dps .login .login-action-lostpassword .submit.excerpt {
 	border: none;
-	margin: -10px 0 20px;
+	margin: calc(var(--type__size) * .4) 0 calc(var(--type__size) * 1.25);
 }
 
 .login .input::-ms-clear {
@@ -234,17 +237,29 @@ input:hover[type="submit"] {
 	background: 0 0;
 	border: 1px solid transparent;
 	box-shadow: none;
-	font-size: 14px;
+	font-size: calc(var(--type__size) * .9);
+	font-family: dashicons;
 	line-height: 2;
-	width: 2.5rem;
-	height: 2.5rem;
-	min-width: 40px;
-	min-height: 40px;
+	width: calc(var(--type__size) * 2.5);
+	height: calc(var(--type__size) * 2.5);
+	min-width: calc(var(--type__size) * 2.5);
+	min-height: calc(var(--type__size) * 2.5);
 	margin: 0;
-	padding: 5px 9px;
+	padding: calc(var(--type__size) * .3) calc(var(--type__size) * .6);
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+.login .button.wp-hide-pw .dashicons, .login .wp-block-button a.wp-hide-pw .dashicons, .wp-block-button .login a.wp-hide-pw .dashicons, .login .wp-block-button > div.wp-hide-pw .dashicons, .login input.wp-hide-pw[type="button"] .dashicons, .login input.wp-hide-pw[type="reset"] .dashicons, .login input.wp-hide-pw[type="submit"] .dashicons {
+	position: relative;
+	width: calc(var(--type__size) * 1.25);
+	height: calc(var(--type__size) * 1.25);
+	top: calc(var(--type__size) * .25);
+}
+
+.login .button.wp-hide-pw span:before, .login .wp-block-button a.wp-hide-pw span:before, .wp-block-button .login a.wp-hide-pw span:before, .login .wp-block-button > div.wp-hide-pw span:before, .login input.wp-hide-pw[type="button"] span:before, .login input.wp-hide-pw[type="reset"] span:before, .login input.wp-hide-pw[type="submit"] span:before {
+	color: var(--color__base_400);
 }
 
 .login .button.wp-hide-pw:hover, .login .wp-block-button a.wp-hide-pw:hover, .wp-block-button .login a.wp-hide-pw:hover,
@@ -259,8 +274,8 @@ input:hover[type="submit"] {
 .login input.wp-hide-pw:focus[type="reset"],
 .login input.wp-hide-pw:focus[type="submit"] {
 	background: 0 0;
-	border-color: #3582c4;
-	box-shadow: 0 0 0 1px #3582c4;
+	border-color: var(--color__message);
+	box-shadow: 0 0 0 1px var(--color__message);
 	outline: 2px solid transparent;
 }
 
@@ -271,12 +286,6 @@ input:hover[type="submit"] {
 	background: 0 0;
 	box-shadow: none;
 	transform: none;
-}
-
-.login .button.wp-hide-pw .dashicons, .login .wp-block-button a.wp-hide-pw .dashicons, .wp-block-button .login a.wp-hide-pw .dashicons, .login .wp-block-button > div.wp-hide-pw .dashicons, .login input.wp-hide-pw[type="button"] .dashicons, .login input.wp-hide-pw[type="reset"] .dashicons, .login input.wp-hide-pw[type="submit"] .dashicons {
-	width: 1.25rem;
-	height: 1.25rem;
-	top: .25rem;
 }
 
 .login .wp-pwd {
@@ -335,12 +344,12 @@ input:hover[type="submit"] {
 	border-bottom: 1px #f0f0f1 solid;
 	color: #50575e;
 	font-weight: 400;
-	padding-bottom: .5em;
+	padding-bottom: calc(var(--type__size) * .5);
 	text-align: left;
 }
 
 .login label {
-	font-size: 14px;
+	font-size: calc(var(--type__size) * .9);
 	line-height: 1.5;
 	display: inline-block;
 	margin-bottom: 3px;
@@ -426,17 +435,18 @@ input:hover[type="submit"] {
 	margin: auto;
 }
 
-.login #backtoblog, .login #nav {
-	font-size: 13px;
-	padding: 0 24px;
+.login #backtoblog,
+.login #nav {
+	font-size: calc(var(--type__size) * .85);
+	padding: 0 calc(var(--type__size) * 1.5);
 }
 
 .login #nav {
-	margin: 24px 0 0;
+	margin: calc(var(--type__size) * 1.5) 0 0;
 }
 
-#backtoblog {
-	margin: 16px 0;
+.login #backtoblog {
+	margin: var(--type__size) 0;
 	word-wrap: break-word;
 }
 
@@ -448,22 +458,22 @@ input:hover[type="submit"] {
 .login .privacy-policy-page-link {
 	text-align: center;
 	width: 100%;
-	margin: 3em 0 2em;
+	margin: calc(var(--type__size) * 3) 0 calc(var(--type__size) * 2);
 }
 
 .login form .input, .login input[type=password], .login input[type=text] {
-	font-size: 24px;
+	font-size: calc(var(--type__size) * 1.5);
 	line-height: 1.33333333;
 	width: 100%;
 	border-width: .0625rem;
 	padding: .1875rem .3125rem;
-	margin: 0 6px 16px 0;
+	margin: 0 6px var(--type__size) 0;
 	min-height: 40px;
 	max-height: none;
 }
 
 .login input.password-input {
-	font-family: Consolas, Monaco, monospace;
+	font-family: var(--type__mono);
 }
 
 .js.login input.password-input, .js.login-action-rp form .input, .js.login-action-rp input[type=text] {
