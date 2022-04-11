@@ -1254,41 +1254,62 @@ nav.main-navigation li:not(:last-of-type) a {
 /* Alignments
 --------------------------------------------- */
 html .site .alignleft {
-	/*rtl:ignore*/
-	float: left;
-	/*rtl:ignore*/
-	margin-right: calc(var(--type__size)*1.5);
-	margin-bottom: var(--type__size);
+	float: none;
+	margin: 0 0 var(--type__size);
 	position: relative;
-	margin-left: calc(25% - 25vw);
-	max-width: 100vw;
+	margin-left: 0;
 }
 
 [data-align="left"] > * {
 	margin-right: calc(var(--type__size)*1.5);
 }
 
+@media all and (min-width: 360px) {
+	html .site .alignleft {
+		/*rtl:ignore*/
+		float: left;
+		margin-right: var(--type__size);
+		width: 50%;
+	}
+}
+
+@media all and (min-width: 680px) {
+	html .site .alignleft {
+		/*rtl:ignore*/
+		margin-right: calc(var(--type__size)*1.5);
+		margin-left: calc(25% - 25vw);
+		max-width: 100vw;
+		width: auto;
+	}
+}
+
 html .site .alignright {
-	/*rtl:ignore*/
-	float: right;
-	/*rtl:ignore*/
-	margin-left: calc(var(--type__size)*1.5);
-	margin-bottom: var(--type__size);
+	float: none;
+	margin: 0 0 var(--type__size);
 	position: relative;
-	margin-right: calc(25% - 25vw);
-	max-width: 100vw;
 }
 
 [data-align="right"] > * {
 	margin-left: calc(var(--type__size)*1.5);
 }
 
-html .wp-block-columns .alignleft {
-	margin-left: 0;
+@media all and (min-width: 360px) {
+	html .site .alignright {
+		/*rtl:ignore*/
+		float: right;
+		margin-left: var(--type__size);
+		width: 50%;
+	}
 }
 
-html .wp-block-columns .alignright {
-	margin-right: 0;
+@media all and (min-width: 680px) {
+	html .site .alignright {
+		/*rtl:ignore*/
+		margin-left: calc(var(--type__size)*1.5);
+		margin-right: calc(25% - 25vw);
+		max-width: 100vw;
+		width: auto;
+	}
 }
 
 .aligncenter {
