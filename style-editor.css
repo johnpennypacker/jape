@@ -180,12 +180,32 @@ input:hover[type="submit"] {
 	margin-left: 0;
 }
 
+.wp-block-query .wp-block-post .alignright {
+	margin-right: 0;
+}
+
+.wp-block-query .wp-block-post .alignleft,
+.wp-block-query .wp-block-post .alignright {
+	max-width: 100%;
+}
+
 .wp-block-query .wp-block-post-title {
 	clear: none;
 }
 
 .wp-block-query .wp-block-post-title a {
 	display: inline;
+}
+
+@media all and (min-width: 480px) {
+	.wp-block-query .wp-block-post .alignleft {
+		max-width: 50%;
+		margin-left: 0;
+	}
+	.wp-block-query .wp-block-post .alignright {
+		max-width: 50%;
+		margin-right: 0;
+	}
 }
 
 /* Normalize

@@ -62,11 +62,34 @@
 		.alignleft {
 			margin-left: 0;
 		}
+		.alignright {
+			margin-right: 0;
+		}
+		.alignleft,
+		.alignright {
+			max-width: 100%;
+		}
 	}
 	.wp-block-post-title {
 		clear: none;
 		a {
 			display: inline;
 		}
+	}
+}
+
+@media all and (min-width: 480px) {
+	.wp-block-query {
+		.wp-block-post {
+			.alignleft {
+				max-width: 50%;
+				margin-left: 0;
+			}
+			.alignright {
+				max-width: 50%;
+				margin-right: 0;
+			}
+		}
+
 	}
 }
