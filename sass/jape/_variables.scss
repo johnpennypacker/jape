@@ -20,6 +20,11 @@
 	--color__succcess: #00a32a;
 	--color__error: #d63638;
 	
+	--color__link: var(--color__brand);
+ 	--color__visited: var(--color__base_100);
+	--color__hover: var(--color__base_100);
+// 	--color__active: var(--color__base_100);
+	
 }
 
 // @media (prefers-color-scheme: dark) {

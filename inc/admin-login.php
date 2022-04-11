@@ -9,7 +9,7 @@
 /**
  * shut off the "verify admin email" message
  */
-// add_filter( 'admin_email_check_interval', '__return_false' );
+add_filter( 'admin_email_check_interval', '__return_false' );
 
 /**
  * Include css and js

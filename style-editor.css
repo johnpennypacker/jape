@@ -102,6 +102,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__message: var(--color__base_500);
 	--color__succcess: #00a32a;
 	--color__error: #d63638;
+	--color__link: var(--color__brand);
+	--color__visited: var(--color__base_100);
+	--color__hover: var(--color__base_100);
 }
 
 :root {
@@ -733,12 +736,12 @@ tfoot td {
 /* Links
 --------------------------------------------- */
 a {
-	color: var(--color__brand);
+	color: var(--color__link);
 	transition: all .2s ease-in-out;
 }
 
 a:visited {
-	color: var(--color__base_100);
+	color: var(--color__visited);
 }
 
 a:hover {
@@ -746,10 +749,8 @@ a:hover {
 	transform: translateX(-1px) translateY(-1px);
 }
 
-a:hover,
-a:focus,
-a:active {
-	color: var(--color__base_100);
+a:hover, a:focus, a:active {
+	color: var(--color__active);
 	text-decoration: none;
 }
 
@@ -757,9 +758,22 @@ a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
+}
+
+a:hover {
+	background-color: var(--color__brand);
+	color: var(--color__base_900);
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	text-decoration: none;
 }
 
 .site-header a,
@@ -775,21 +789,11 @@ a:active {
 	color: var(--color__brand_fg);
 }
 
-a {
-	color: var(--color__brand);
-	transition: all .2s ease-in-out;
-}
-
-a:hover {
-	background-color: var(--color__brand);
-	color: var(--color__base_900);
-}
-
-.continue {
+.arrow-right {
 	position: relative;
 }
 
-.continue:before {
+.arrow-right:before {
 	content: '';
 	display: block;
 	border-top: 2px solid var(--color__brand);
@@ -802,7 +806,7 @@ a:hover {
 	left: calc(100% + 1rem);
 }
 
-.continue:after {
+.arrow-right:after {
 	content: '';
 	display: block;
 	border: 2px solid var(--color__brand);
@@ -816,11 +820,11 @@ a:hover {
 	right: -1rem;
 }
 
-.continue:hover:before {
+.arrow-right:hover:before {
 	width: 1rem;
 }
 
-.continue:hover:after {
+.arrow-right:hover:after {
 	transform: translateX(1rem) rotateZ(45deg);
 }
 
