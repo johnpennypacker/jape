@@ -16,7 +16,7 @@ html .site .alignleft {
 		/*rtl:ignore*/
 		float: left;
 		margin-right: var(--type__size);
-		width: 50%;
+		max-width: 50%;
 	}
 }
 @media all and (min-width: 680px) {
@@ -44,7 +44,7 @@ html .site .alignright {
 		/*rtl:ignore*/
 		float: right;
 		margin-left: var(--type__size);
-		width: 50%;
+		max-width: 50%;
 	}
 }
 @media all and (min-width: 680px) {
