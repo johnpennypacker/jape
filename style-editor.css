@@ -168,10 +168,6 @@ input:hover[type="submit"] {
 	list-style: none;
 }
 
-.wp-block-query figure {
-	margin-top: calc(var(--type__size) * .5);
-}
-
 .wp-block-query .wp-block-post {
 	margin-bottom: calc(var(--type__size) * 4);
 }
@@ -198,6 +194,9 @@ input:hover[type="submit"] {
 }
 
 @media all and (min-width: 480px) {
+	.wp-block-query .wp-block-post-template figure.wp-block-post-featured-image {
+		margin-top: calc(var(--type__size) * .5);
+	}
 	.wp-block-query .wp-block-post .alignleft {
 		max-width: 50%;
 		margin-left: 0;
@@ -783,7 +782,7 @@ a:hover, a:active {
 }
 
 a:hover {
-	background-color: var(--color__brand);
+	background-color: var(--color__link);
 	color: var(--color__base_900);
 }
 
