@@ -1,5 +1,25 @@
 ( function() {
 
+
+	var links = document.querySelectorAll('a, button, .button');
+	links.forEach(function(el) {
+		el.addEventListener( 'mousemove', buttonFlair );
+	});
+	
+	function buttonFlair(e) {
+		console.log(e);
+		const x = e.pageX - e.target.offsetX;
+		const y = e.pageY - e.target.offsetY;
+		e.target.style.setProperty( '--x', e.offsetX );
+		e.target.style.setProperty( '--y', e.offsetY );
+
+		e.target.style.setProperty( '--mouse-x-pct', e.offsetX / e.target.offsetWidth );
+		e.target.style.setProperty( '--mouse-y-pct', e.offsetY / e.target.offsetHeight );
+
+	}
+
+
+
 	if('IntersectionObserver' in window){
 		let options = {
 			root: null,
@@ -27,7 +47,6 @@
 
 
 			// set the distance from the top of the element to the top of the viewport
-			// on new page loads... can be wonky on refreshes with scroll depths)
 			entry.target.style.setProperty( '--from-top', top );
 			entry.target.style.setProperty( '--height', height );
 			entry.target.dataset.isIntersecting = entry.isIntersecting;
@@ -37,14 +56,9 @@
 				entry.target.dataset.wasVisible = true;
 				entry.target.style.setProperty( '--was-visible', true );
 			}
-
+			
 			entry.target.style.setProperty( '--intersection-ratio', entry.intersectionRatio );
-
-	 		//console.log(entry.isIntersecting, entry.boundingClientRect, entry.intersectionRect, entry.rootBounds);
-
 		});
-		
-
 	}
 
 
