@@ -1,18 +1,20 @@
 ( function() {
 
-	let options = {
-		root: null,
-		rootMargin: '0px',
-		threshold: buildThreshold( 100 )
-	}
-	let observer = new IntersectionObserver(observerCallback, options);
-	let els = document.querySelectorAll(".wp-block-cover, img, header, footer, nav, section");
+	if('IntersectionObserver' in window){
+		let options = {
+			root: null,
+			rootMargin: '0px',
+			threshold: buildThreshold( 100 )
+		}
+		let observer = new IntersectionObserver(observerCallback, options);
+		let els = document.querySelectorAll(".wp-block-cover, img, header, footer, nav, section");
 
-	els.forEach(function(el) {
-		observer.observe(el);
-		el.dataset.wasVisible = false;
-		el.style.setProperty( '--was-visible', 'false' );
-	});
+		els.forEach(function(el) {
+			observer.observe(el);
+			el.dataset.wasVisible = false;
+			el.style.setProperty( '--was-visible', 'false' );
+		});
+	}
 
 	function observerCallback(entries, observer) {
 
@@ -26,9 +28,7 @@
 
 			// set the distance from the top of the element to the top of the viewport
 			// on new page loads... can be wonky on refreshes with scroll depths)
-			entry.target.dataset.top = top;
 			entry.target.style.setProperty( '--from-top', top );
-			entry.target.dataset.height = height;
 			entry.target.style.setProperty( '--height', height );
 			entry.target.dataset.isIntersecting = entry.isIntersecting;
 			entry.target.style.setProperty( '--intersecting', entry.isIntersecting );
@@ -38,16 +38,7 @@
 				entry.target.style.setProperty( '--was-visible', true );
 			}
 
-			if(entry.isIntersecting) {
-				if( top > 0 ) {
-					pct = (vh - top) / height;
-				} else {
-					pct = (height + top) / height;
-				}
-				if( pct > 1 ) { pct = 1 } // it happens
-			}
-			entry.target.dataset.percentVisible = pct;
-			entry.target.style.setProperty( '--percent-visible', pct );
+			entry.target.style.setProperty( '--intersection-ratio', entry.intersectionRatio );
 
 	 		//console.log(entry.isIntersecting, entry.boundingClientRect, entry.intersectionRect, entry.rootBounds);
 
