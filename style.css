@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
 Theme Name: jape
-Theme URI:
+Theme URI: http://underscores.me/
 Author: John Pennypacker
 Author URI: https://pennypacker.net/
 Description: Description
@@ -97,7 +97,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__brand_fg: #fff;
 	--color__accent: #1f7789;
 	--color__accent_fg: #fff;
-	--color__highlight: #fdbd45;
+	--color__highlight: #f4d751;
 	--color__highlight_text: #000;
 	--color__message: var(--color__base_500);
 	--color__succcess: #00a32a;

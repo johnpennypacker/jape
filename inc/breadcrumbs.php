@@ -125,9 +125,12 @@ function jape_breadcrumbs() {
 	$prepend = empty( $option_val ) ? array( $default ) : explode( "\n", $option_val );
 
 	foreach ( $prepend as $l ) {
+		if ( empty( $l ) ) { continue; }
 		$bits = explode( '(', $l );
 		$name = trim( $bits[0], '[]' );
-		$href = @rtrim( $bits[1], ')' );
+		if( isset( $bits[1] ) ) {
+			$href = rtrim( $bits[1], ')' );
+		}
 		if ( ! empty( $name ) && ! empty( $href ) ) {
 			$crumbs[] = array(
 				'name' => $name,
@@ -180,7 +183,7 @@ function jape_breadcrumbs_get_link( $path ) {
 	}
 
 	$p = '';
-	$post_id = url_to_postid( $path );
+	$post_id = url_to_postid( get_site_url() . $path );
 	
 	if ( 0 !== $post_id ) { // it's a post or a page.
 		// $p = get_page_by_path( $path );
