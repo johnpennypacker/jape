@@ -7,7 +7,6 @@
 	});
 	
 	function buttonFlair(e) {
-		console.log(e);
 		const x = e.pageX - e.target.offsetX;
 		const y = e.pageY - e.target.offsetY;
 		e.target.style.setProperty( '--x', e.offsetX );
