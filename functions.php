@@ -207,6 +207,7 @@ function jape_scripts() {
 	wp_style_add_data( 'jape-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'jape-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'jape-scroll', get_template_directory_uri() . '/js/scroll.js', array(), _S_VERSION, true );
 	// wp_enqueue_script( 'jape-rando', get_template_directory_uri() . '/js/rando.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
