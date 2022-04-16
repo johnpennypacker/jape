@@ -48,6 +48,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'utilities/accessibility';
 @import 'utilities/alignment';
 
+@import 'jape/flair';
+
 
 html {
 	background-color: var(--color_brand);
@@ -100,7 +102,3 @@ body {
 	margin: 0 0 var(--type__size);
 	text-align: left;
 }
-
-// header, img {
-// 	opacity: var(--intersection-ratio);
-// }

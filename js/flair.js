@@ -10,8 +10,8 @@
 	function buttonFlair(e) {
 		const x = e.pageX - e.target.offsetX;
 		const y = e.pageY - e.target.offsetY;
-		e.target.style.setProperty( '--x', e.offsetX );
-		e.target.style.setProperty( '--y', e.offsetY );
+		e.target.style.setProperty( '--mouse-x', e.offsetX );
+		e.target.style.setProperty( '--mouse-y', e.offsetY );
 
 		e.target.style.setProperty( '--mouse-x-pct', e.offsetX / e.target.offsetWidth );
 		e.target.style.setProperty( '--mouse-y-pct', e.offsetY / e.target.offsetHeight );
