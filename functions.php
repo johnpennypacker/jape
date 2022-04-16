@@ -215,6 +215,19 @@ function jape_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'jape_scripts' );
 
+
+/**
+ * Test if the current page is using a "minimal" template.
+ * @return bool
+ */
+function jape_is_minimal() {
+	$template_slug = get_page_template_slug();
+	$minimal = substr( $template_slug, -11 ); // it goes to 11
+	$is_minimal = ( 'minimal.php' === $minimal );
+	return $is_minimal;
+}
+
+
 /**
  * Implement the Custom Header feature.
  */

@@ -36,11 +36,11 @@ add_action( 'after_setup_theme', 'jape_custom_header_setup' );
 
 
 /**
- * Loads customizer styles in the block editor.
- * but it doesn't auto-prefix selectors, so it styles the chrome too.  :(
+ * adds css for customized header.
  */
 function jape_add_custom_header_styles() {
-	if ( has_header_image() ) {
+
+	if ( ! jape_is_minimal() && has_header_image() ) {
 		$header_image = get_theme_mod( 'header_image_data' );
 		$css = '.site-header { background-image: url(' . get_header_image() . '); min-height:' . $header_image->height . 'px;';
 		wp_register_style( 'jape-custom-header-image', false );

@@ -89,6 +89,18 @@ body {
 	}
 }
 
+.site-header.minimal {
+	background-color: var(--color__base_100);
+}
+.site-header.minimal .site-branding {
+	display: block;
+}
+.site-header.minimal .site-title {
+	font-size: var(--type__size);
+	margin: 0 0 var(--type__size);
+	text-align: left;
+}
+
 // header, img {
 // 	opacity: var(--intersection-ratio);
 // }
