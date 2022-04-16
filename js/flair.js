@@ -1,6 +1,7 @@
 ( function() {
 
 
+	/** add hover x and y coordinates to links and buttons **/
 	var links = document.querySelectorAll('a, button, .button');
 	links.forEach(function(el) {
 		el.addEventListener( 'mousemove', buttonFlair );
@@ -17,8 +18,18 @@
 
 	}
 
+	/** 
+	 * Seeds random numbers to css vars
+	 */
+	function changeRando() {
+		document.querySelector(':root').style.setProperty('--random', Math.random());
+		document.querySelector(':root').style.setProperty('--random2', Math.random());
+	}
+	//setInterval(changeRando, 1000);
 
 
+
+	//** add intersection data to images and major sections **/
 	if('IntersectionObserver' in window){
 		let options = {
 			root: null,
