@@ -97,7 +97,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__brand_fg: #fff;
 	--color__accent: #1f7789;
 	--color__accent_fg: #fff;
-	--color__highlight: #fdbd45;
+	--color__highlight: #f4d751;
 	--color__highlight_text: #000;
 	--color__message: var(--color__base_500);
 	--color__succcess: #00a32a;
@@ -1052,6 +1052,20 @@ nav.main-navigation li:not(:last-of-type) a {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+footer nav ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+footer nav li {
+	display: inline-block;
+	list-style: none;
+}
+
+footer nav li:not(:last-of-type) {
+	margin-right: .5rem;
 }
 
 /* Posts and pages

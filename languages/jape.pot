@@ -83,7 +83,7 @@ msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: functions.php:53
-msgid "Primary"
+msgid "Navigation"
 msgstr ""
 
 #: functions.php:130
@@ -99,7 +99,7 @@ msgid "Skip to content"
 msgstr ""
 
 #: header.php:49
-msgid "Primary Menu"
+msgid "Navigation Menu"
 msgstr ""
 
 #. translators: %s: post date.

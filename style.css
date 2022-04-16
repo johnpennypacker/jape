@@ -1342,6 +1342,7 @@ header.site-header {
 .site-header > div,
 .site-header > nav,
 .site-footer > div,
+.site-footer > nav,
 main,
 .breadcrumbs {
 	max-width: 64ch;
@@ -1510,6 +1511,20 @@ nav.main-navigation li:not(:last-of-type) a {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+footer nav ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+footer nav li {
+	display: inline-block;
+	list-style: none;
+}
+
+footer nav li:not(:last-of-type) {
+	margin-right: .5rem;
 }
 
 /* Posts and pages

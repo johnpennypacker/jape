@@ -12,6 +12,17 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<nav>
+			<?php 
+			wp_nav_menu(
+				array(
+					'theme_location' => 'navigation-menu',
+					'menu_id' => 'footer-navigation',
+					'depth' => 0,
+				)
+			);
+			?>
+		</nav>
 		<div class="site-info">
 			<?php
 				printf( esc_html__( '© Copyright %d %s', 'jape' ), '2022', get_bloginfo( 'name' ) );
