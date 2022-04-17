@@ -74,42 +74,50 @@
 }
 
 
-nav.main-navigation {
-// 	background-color: rgba(0,0,0,.2);	
-// 	padding: .2rem;
-	ul, li, a {
-		height: 100%;
-	}
-	a {
-		background-color: var(--color__base_300);	
-		display: block;
-		padding: calc(var(--type__size) * .5);
-		text-decoration: none;
-		&:hover {
-			background-color: var(--color__base_500);	
-		}
-		&:link, 
-		&:visited, 
-		&:hover,
-		&:active {
-			color: var(--color__base_900);	
-		}
-	}
-	li.current_page_item a {
-		background-color: var(--color__base_900);	
-		color: var(--color__base_100);
-		pointer-events: none;
-	}
-	li:not(:last-of-type) a {
-		margin-right: calc(var(--type__size) * .4);
-	}
-}
 
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	position: relative;
+	z-index: 1;
+}
+.menu-toggle {
+	cursor: pointer;
+}
+.main-navigation.toggled {
+	&::before {
+		background-color: var(--color__base_100);
+		content: '';
+		display: block;
+		height: 100vh;
+		left: 0;
+		opacity: .7;
+		top: 0;
+		position: fixed;
+		width: 100vw;
+	}
+	.menu-toggle {
+		padding-right: calc( var(--type__size) * 2.25 );
+		position: relative;
+	}
+	.menu-toggle::before,
+	.menu-toggle::after {
+		border-top: 2px solid #000;
+		content: '';
+		position: absolute;
+		height: 0;
+		width: calc( var(--type__size) * 1.25 );
+		right: calc( var(--type__size) * .5 );
+		top: calc( var(--type__size) * .85 );
+	}
+	.menu-toggle::before {
+		transform: rotateZ(-45deg);
+	}
+	.menu-toggle::after {
+		transform: rotateZ(45deg);
+	}
 }
 
 @media screen and (min-width: 37.5em) {
@@ -118,10 +126,44 @@ nav.main-navigation {
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
-		flex-wrap: wrap;
+	nav.main-navigation {
+	// 	background-color: rgba(0,0,0,.2);	
+	// 	padding: .2rem;
+		&::before {
+			content: none;
+		}
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		ul, li, a {
+			height: 100%;
+		}
+		a {
+			background-color: var(--color__base_300);	
+			display: block;
+			padding: calc(var(--type__size) * .5);
+			text-decoration: none;
+			&:hover {
+				background-color: var(--color__base_500);	
+			}
+			&:link, 
+			&:visited, 
+			&:hover,
+			&:active {
+				color: var(--color__base_900);	
+			}
+		}
+		li.current_page_item a {
+			background-color: var(--color__base_900);	
+			color: var(--color__base_100);
+			pointer-events: none;
+		}
+		li:not(:last-of-type) a {
+			margin-right: calc(var(--type__size) * .4);
+		}
 	}
+	
 }
 
 .site-main .comment-navigation,

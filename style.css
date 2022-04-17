@@ -1491,48 +1491,87 @@ textarea {
 	position: relative;
 }
 
-nav.main-navigation ul, nav.main-navigation li, nav.main-navigation a {
-	height: 100%;
-}
-
-nav.main-navigation a {
-	background-color: var(--color__base_300);
-	display: block;
-	padding: calc(var(--type__size) * .5);
-	text-decoration: none;
-}
-
-nav.main-navigation a:hover {
-	background-color: var(--color__base_500);
-}
-
-nav.main-navigation a:link, nav.main-navigation a:visited, nav.main-navigation a:hover, nav.main-navigation a:active {
-	color: var(--color__base_900);
-}
-
-nav.main-navigation li.current_page_item a {
-	background-color: var(--color__base_900);
-	color: var(--color__base_100);
-	pointer-events: none;
-}
-
-nav.main-navigation li:not(:last-of-type) a {
-	margin-right: calc(var(--type__size) * .4);
-}
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	position: relative;
+	z-index: 1;
+}
+
+.menu-toggle {
+	cursor: pointer;
+}
+
+.main-navigation.toggled::before {
+	background-color: var(--color__base_100);
+	content: '';
+	display: block;
+	height: 100vh;
+	left: 0;
+	opacity: .7;
+	top: 0;
+	position: fixed;
+	width: 100vw;
+}
+
+.main-navigation.toggled .menu-toggle {
+	padding-right: calc( var(--type__size) * 2.25);
+	position: relative;
+}
+
+.main-navigation.toggled .menu-toggle::before,
+.main-navigation.toggled .menu-toggle::after {
+	border-top: 2px solid #000;
+	content: '';
+	position: absolute;
+	height: 0;
+	width: calc( var(--type__size) * 1.25);
+	right: calc( var(--type__size) * .5);
+	top: calc( var(--type__size) * .85);
+}
+
+.main-navigation.toggled .menu-toggle::before {
+	transform: rotateZ(-45deg);
+}
+
+.main-navigation.toggled .menu-toggle::after {
+	transform: rotateZ(45deg);
 }
 
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
 	}
-	.main-navigation ul {
+	nav.main-navigation::before {
+		content: none;
+	}
+	nav.main-navigation ul {
 		display: flex;
 		flex-wrap: wrap;
+	}
+	nav.main-navigation ul, nav.main-navigation li, nav.main-navigation a {
+		height: 100%;
+	}
+	nav.main-navigation a {
+		background-color: var(--color__base_300);
+		display: block;
+		padding: calc(var(--type__size) * .5);
+		text-decoration: none;
+	}
+	nav.main-navigation a:hover {
+		background-color: var(--color__base_500);
+	}
+	nav.main-navigation a:link, nav.main-navigation a:visited, nav.main-navigation a:hover, nav.main-navigation a:active {
+		color: var(--color__base_900);
+	}
+	nav.main-navigation li.current_page_item a {
+		background-color: var(--color__base_900);
+		color: var(--color__base_100);
+		pointer-events: none;
+	}
+	nav.main-navigation li:not(:last-of-type) a {
+		margin-right: calc(var(--type__size) * .4);
 	}
 }
 
