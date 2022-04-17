@@ -42,7 +42,21 @@ function jape_add_custom_header_styles() {
 
 	if ( ! jape_is_minimal() && has_header_image() ) {
 		$header_image = get_theme_mod( 'header_image_data' );
-		$css = '.site-header { background-image: url(' . get_header_image() . '); min-height:' . $header_image->height . 'px;';
+		
+		$style_properties = array(
+			'background-image' => 'url(' . get_header_image() . ')',
+			'background-position' => '50% 50%',
+			'background-size' => 'cover',
+			'display' => 'flex',
+			'flex-direction' => 'column',
+			'justify-content' => 'flex-end',
+			'min-height' => $header_image->height . 'px;',			
+		);
+		$css = '.site-header { ';
+		foreach( $style_properties as $prop => $value ) {
+			$css .= $prop . ':' . $value . ';';
+		}
+		$css .= '}';
 		wp_register_style( 'jape-custom-header-image', false );
 		wp_enqueue_style( 'jape-custom-header-image' );
 		wp_add_inline_style( 'jape-custom-header-image', $css );

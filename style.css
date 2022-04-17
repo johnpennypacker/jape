@@ -114,6 +114,101 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--type__mono: 'plex-mono', monospace;
 }
 
+/*--------------------------------------------------------------
+# Main layout
+--------------------------------------------------------------*/
+html {
+	background-color: var(--color_brand);
+}
+
+body {
+	background-color: var(--color__base_900);
+}
+
+header.site-header {
+	background-color: var(--color__brand);
+	color: var(--color__brand_fg);
+	margin: 0 0 calc(var(--type__size) * 1);
+	padding: var(--type__size) var(--type__size) 0;
+}
+
+.site-title {
+	font-size: calc(var(--type__size) * 2);
+	font-family: var(--type__serif);
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 0;
+}
+
+.site-header > div,
+.site-header > nav,
+.site-footer > div,
+.site-footer > nav,
+main,
+.breadcrumbs {
+	max-width: 64ch;
+	margin: 0 auto;
+	padding: 0 var(--type__size);
+}
+
+footer.site-footer {
+	margin: 0;
+	padding: var(--type__size);
+	background-color: var(--color__base_100);
+	color: var(--color__base_900);
+}
+
+.site-branding {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.site-branding .custom-logo-link {
+	flex-grow: 0;
+	margin: 0 var(--type__size) var(--type__size) 0;
+	width: 100px;
+}
+
+@media all and (min-width: 420px) {
+	.site-branding {
+		display: flex;
+		flex-direction: row;
+	}
+	.site-branding .site-name {
+		flex-grow: 1;
+	}
+}
+
+.site-title {
+	font-weight: 400;
+}
+
+.site-title a:link,
+.site-title a:visited {
+	text-decoration: none;
+}
+
+.site-title a:hover {
+	text-decoration: underline;
+}
+
+.site-header.minimal {
+	background-color: var(--color__base_100);
+}
+
+.site-header.minimal .site-branding {
+	display: block;
+}
+
+.site-header.minimal .site-title {
+	font-size: var(--type__size);
+	margin: 0 0 var(--type__size);
+	text-align: left;
+}
+
 .wp-block-cover,
 .wp-block-buttons,
 .wp-block-media-text {
@@ -1310,53 +1405,6 @@ textarea {
 	width: 100%;
 }
 
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-body {
-	margin: 0;
-	padding: 0;
-}
-
-header.site-header {
-	background-color: var(--color__brand);
-	color: var(--color__brand_fg);
-	margin: 0 0 calc(var(--type__size) * 1);
-	padding: var(--type__size) var(--type__size) 0;
-	/** custom header image styles **/
-	background-position: 50% 50%;
-	background-size: cover;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-}
-
-.site-title {
-	font-size: calc(var(--type__size) * 2);
-	font-family: var(--type__serif);
-	font-weight: bold;
-	line-height: 1.2;
-	margin: 0;
-}
-
-.site-header > div,
-.site-header > nav,
-.site-footer > div,
-.site-footer > nav,
-main,
-.breadcrumbs {
-	max-width: 64ch;
-	margin: 0 auto;
-	padding: 0 var(--type__size);
-}
-
-footer.site-footer {
-	margin: 0;
-	padding: 1rem;
-	background-color: var(--color__base_100);
-	color: var(--color__base_900);
-}
-
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1853,65 +1901,6 @@ html .site .alignright {
 	margin-left: auto !important;
 	margin-right: auto !important;
 	width: inherit;
-}
-
-html {
-	background-color: var(--color_brand);
-}
-
-body {
-	background-color: var(--color__base_900);
-}
-
-.site-branding {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-}
-
-.site-branding .custom-logo-link {
-	flex-grow: 0;
-	margin: 0 var(--type__size) var(--type__size) 0;
-	width: 100px;
-}
-
-@media all and (min-width: 420px) {
-	.site-branding {
-		display: flex;
-		flex-direction: row;
-	}
-	.site-branding .site-name {
-		flex-grow: 1;
-	}
-}
-
-.site-title {
-	font-weight: 400;
-}
-
-.site-title a:link,
-.site-title a:visited {
-	text-decoration: none;
-}
-
-.site-title a:hover {
-	text-decoration: underline;
-}
-
-.site-header.minimal {
-	background-color: var(--color__base_100);
-}
-
-.site-header.minimal .site-branding {
-	display: block;
-}
-
-.site-header.minimal .site-title {
-	font-size: var(--type__size);
-	margin: 0 0 var(--type__size);
-	text-align: left;
 }
 
 /*# sourceMappingURL=style.css.map */

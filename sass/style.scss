@@ -22,6 +22,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @import 'jape/fonts';
 @import 'jape/variables';
+@import 'jape/main';
 @import 'jape/blocks';
 @import 'jape/login';
 
@@ -32,7 +33,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'base/links';
 @import 'base/forms';
 
-@import 'layouts/layouts';
+// @import 'layouts/layouts';
 
 @import 'components/comments';
 @import 'components/navigation';
@@ -51,54 +52,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'jape/flair';
 
 
-html {
-	background-color: var(--color_brand);
-}
-body {
-	background-color: var(--color__base_900);
-}
-
-.site-branding {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	.custom-logo-link {
-		flex-grow: 0;
-		margin: 0 var(--type__size) var(--type__size) 0;
-		width: 100px;
-	}
-}
-
-@media all and (min-width: 420px) {
-	.site-branding {
-		display: flex;
-		flex-direction: row;
-		.site-name {
-			flex-grow: 1;
-		}
-	}
-}
-.site-title {
-	font-weight: 400;
-	a:link,
-	a:visited {
-		text-decoration: none;
-	}
-	a:hover {
-		text-decoration: underline;
-	}
-}
-
-.site-header.minimal {
-	background-color: var(--color__base_100);
-}
-.site-header.minimal .site-branding {
-	display: block;
-}
-.site-header.minimal .site-title {
-	font-size: var(--type__size);
-	margin: 0 0 var(--type__size);
-	text-align: left;
-}
