@@ -34,7 +34,9 @@
 }
 
 .main-navigation ul {
-	display: none;
+//	display: none;
+	text-indent: -999em;
+	position: absolute;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -82,11 +84,56 @@
 	display: block;
 	position: relative;
 	z-index: 1;
+	text-indent: 0;
+	height: auto;
 }
 .menu-toggle {
+	background-color: var(--color__base_300);	
+	border: 0;
+	color: var(--color__base_900);
+	display: block;
+	padding: calc(var(--type__size) * .5);
+	text-decoration: none;
+	&:hover {
+		background-color: var(--color__base_500);	
+	}
+
 	cursor: pointer;
+	&::before,
+	&::after {
+		border-width: 0;
+		content: '';
+		transform: rotateZ(0);
+		transition: transform .4s ease-in-out;
+	}
 }
+.main-navigation {
+	&::before {
+		content: '';
+		height: 0;
+		width: 0;
+		opacity: 0;
+		transition: opacity .2s ease-in-out;
+	}
+	li {
+		transition: transform .4s ease-in-out;
+	}
+}
+@for $i from 1 through 10 {
+  .main-navigation li:nth-child(#{$i}) {
+    transform: translateY( $i * -1em );
+  }
+}
+
 .main-navigation.toggled {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: calc(var(--type__size) * 1);
+	left: 0;
+	li {
+    transform: translateY( 0 );
+	}
 	&::before {
 		background-color: var(--color__base_100);
 		content: '';
@@ -99,24 +146,31 @@
 		width: 100vw;
 	}
 	.menu-toggle {
-		padding-right: calc( var(--type__size) * 2.25 );
+		display: block;
+		width: 100%;
+		padding: calc(var(--type__size) * 1);
 		position: relative;
+		text-align: left;
 	}
 	.menu-toggle::before,
 	.menu-toggle::after {
-		border-top: 2px solid #000;
+		border-top: 1px solid var(--color__base_900);
 		content: '';
 		position: absolute;
 		height: 0;
 		width: calc( var(--type__size) * 1.25 );
-		right: calc( var(--type__size) * .5 );
-		top: calc( var(--type__size) * .85 );
+		right: calc( var(--type__size) * 1 );
+		top: calc( var(--type__size) * 1.75 );
 	}
 	.menu-toggle::before {
 		transform: rotateZ(-45deg);
 	}
 	.menu-toggle::after {
 		transform: rotateZ(45deg);
+	}
+	a {
+		display: block;
+		padding: var(--type__size) 0 var(--type__size) calc( var(--type__size) * .5 );
 	}
 }
 
@@ -135,6 +189,11 @@
 		ul {
 			display: flex;
 			flex-wrap: wrap;
+			text-indent: 0;
+			position: relative;
+		}
+		li {
+			transform: translateY( 0 ) !important;
 		}
 		ul, li, a {
 			height: 100%;
