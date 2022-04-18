@@ -1476,7 +1476,7 @@ textarea {
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
-	left: auto;
+	left: 96%;
 }
 
 .main-navigation ul li:hover > ul,
@@ -1595,6 +1595,14 @@ textarea {
 .main-navigation.toggled li:hover > ul a,
 .main-navigation.toggled li:focus > ul a {
 	padding-left: calc(var(--type__size) * 1);
+}
+
+.main-navigation.toggled li:hover > ul li:hover > ul,
+.main-navigation.toggled li:hover > ul li:focus > ul,
+.main-navigation.toggled li:focus > ul li:hover > ul,
+.main-navigation.toggled li:focus > ul li:focus > ul {
+	position: relative;
+	float: none;
 }
 
 .main-navigation.toggled::before {
