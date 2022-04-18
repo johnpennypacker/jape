@@ -1476,7 +1476,6 @@ textarea {
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
-	left: 96%;
 }
 
 .main-navigation ul li:hover > ul,
@@ -1688,9 +1687,41 @@ textarea {
 	nav.main-navigation li:not(:last-of-type) a {
 		margin-right: calc(var(--type__size) * .4);
 	}
+	nav.main-navigation ul ul li:hover > ul,
+	nav.main-navigation ul ul li.focus > ul {
+		left: 96%;
+	}
 	nav.main-navigation ul ul a {
 		width: 200px;
 	}
+}
+
+/** adds arrows to menus with children **/
+nav.main-navigation .menu-item-has-children > a {
+	padding-right: calc( var(--type__size) * 1.75);
+}
+
+nav.main-navigation .menu-item-has-children > a::after {
+	border: 1px solid var(--color__base_900);
+	border-width: 1px 1px 0 0;
+	content: '';
+	position: absolute;
+	height: calc( var(--type__size) * .5);
+	width: calc( var(--type__size) * .5);
+	right: calc( var(--type__size) * 1.1);
+	top: calc( var(--type__size) * 1);
+	transform: rotateZ(45deg);
+	transform-origin: center;
+	transition: transform .2s ease-in-out;
+}
+
+nav.main-navigation .menu-item-has-children > a:hover::after {
+	transform: rotateZ(135deg);
+}
+
+nav.main-navigation .menu-item-has-children:hover > a::after,
+nav.main-navigation .menu-item-has-children:focus > a::after {
+	transform: rotateZ(135deg);
 }
 
 .site-main .comment-navigation,
