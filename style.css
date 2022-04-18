@@ -1287,7 +1287,7 @@ a:hover, a:active {
 	outline: 0;
 }
 
-a:hover {
+a:not(.custom-logo-link):hover {
 	background-color: var(--color__link);
 	color: var(--color__base_900);
 }
@@ -1460,9 +1460,9 @@ textarea {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
+	text-indent: 0;
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
@@ -1479,24 +1479,15 @@ textarea {
 	left: auto;
 }
 
-.main-navigation ul ul a {
-	width: 200px;
-}
-
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: auto;
-}
-
-.main-navigation li {
-	position: relative;
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-	position: relative;
 	z-index: 1;
 	text-indent: 0;
 	height: auto;
@@ -1583,8 +1574,27 @@ textarea {
 	left: 0;
 }
 
+.main-navigation.toggled ul {
+	position: relative;
+}
+
+.main-navigation.toggled ul ul {
+	position: absolute;
+}
+
 .main-navigation.toggled li {
 	transform: translateY(0);
+}
+
+.main-navigation.toggled li:hover > ul,
+.main-navigation.toggled li:focus > ul {
+	position: relative;
+	float: none;
+}
+
+.main-navigation.toggled li:hover > ul a,
+.main-navigation.toggled li:focus > ul a {
+	padding-left: calc(var(--type__size) * 1);
 }
 
 .main-navigation.toggled::before {
@@ -1638,7 +1648,7 @@ textarea {
 	nav.main-navigation::before {
 		content: none;
 	}
-	nav.main-navigation ul {
+	nav.main-navigation > div > ul {
 		display: flex;
 		flex-wrap: wrap;
 		text-indent: 0;
@@ -1669,6 +1679,9 @@ textarea {
 	}
 	nav.main-navigation li:not(:last-of-type) a {
 		margin-right: calc(var(--type__size) * .4);
+	}
+	nav.main-navigation ul ul a {
+		width: 200px;
 	}
 }
 
