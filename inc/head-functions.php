@@ -69,8 +69,8 @@ function jape_open_graph() {
 		
 		echo "\n" . '<meta name="description" content="' . $excerpt . '" />';
 		echo "\n" . '<meta name="twitter:card" content="' . $summary_type . '" />';
-		echo "\n" . '<meta name="twitter:site" content="@clarkuniversity" />';
-		echo "\n" . '<meta name="twitter:creator" content="@clarkuniversity" />';
+		echo "\n" . '<meta name="twitter:site" content="@johnpennypacker" />';
+		echo "\n" . '<meta name="twitter:creator" content="@johnpennypacker" />';
 		echo "\n" . '<meta property="og:url" content="' . get_permalink() . '" />';
 		echo "\n" . '<meta property="og:title" content="' . $title . '" />';
 		echo "\n" . '<meta property="og:description" content="' . $excerpt . '" />';
@@ -84,3 +84,4 @@ function jape_open_graph() {
 if ( ! defined( 'WPSEO_VERSION' ) ) {
 	add_action( 'wp_head', 'jape_open_graph' );
 }
+

@@ -12,7 +12,7 @@
 		return;
 	}
 
-	const button = siteNavigation.querySelector( '.menu-toggle' );
+	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
 
 	// Return early if the button doesn't exist.
 	if ( 'undefined' === typeof button ) {
@@ -30,34 +30,6 @@
 	if ( ! menu.classList.contains( 'nav-menu' ) ) {
 		menu.classList.add( 'nav-menu' );
 	}
-	
-	
-	// add toggle buttons to each parent menu item
-	window.addEventListener( 'DOMContentLoaded', function() {
-		const navs = siteNavigation.querySelectorAll( 'li' );
-		navs.forEach(function(el) {
-			if(el.querySelector('li')) { // it has a submenu
-				var button = document.createElement('button');
-				button.appendChild(document.createTextNode('Show submenu'));
-				button.setAttribute( 'aria-expanded', 'false' );
-				button.setAttribute('content', 'test content');
-				button.setAttribute('class', 'submenu-toggle');  
-				button.addEventListener( 'click', function(){
-					if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
-						button.innerHTML = 'Show submenu';
-						button.setAttribute( 'aria-expanded', 'false' );
-					} else {
-						button.innerHTML = 'Hide submenu';
-						button.setAttribute( 'aria-expanded', 'true' );
-					}
-				});
-				el.insertBefore(button, el.querySelector( '.sub-menu' ));
-				
-			}
-		});
-		
-		const buttons = siteNavigation.querySelectorAll( '.submenu-toggle' );
-	});
 
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener( 'click', function() {

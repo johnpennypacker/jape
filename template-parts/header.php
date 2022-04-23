@@ -56,8 +56,8 @@
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'navigation-menu',
-					'menu_id'        => 'header-navigation',
+					'theme_location'	=> 'navigation-menu',
+					'menu_id'					=> 'header-navigation',
 				)
 			);
 			?>

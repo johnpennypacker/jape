@@ -18,7 +18,7 @@
 				array(
 					'theme_location' => 'navigation-menu',
 					'menu_id' => 'footer-navigation',
-					'depth' => 0,
+					'depth' => 1,
 				)
 			);
 			?>
