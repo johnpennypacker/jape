@@ -1017,7 +1017,7 @@ footer nav li:not(:last-of-type) {
 	transform: rotateZ(135deg);
 }
 
-/** styles to include for menu display **/
+/** styles to include for small screen menu display **/
 .menu-hidden, .main-navigation ul {
 	float: left;
 	position: absolute;
@@ -1202,12 +1202,10 @@ footer nav li:not(:last-of-type) {
 		display: none;
 	}
 	.main-navigation .submenu-toggle[aria-expanded='true']::before {
-		background-color: var(--color__base_100);
 		content: '';
 		display: block;
 		height: 100vh;
 		left: 0;
-		opacity: .7;
 		top: 0;
 		position: fixed;
 		width: 100vw;
@@ -1225,6 +1223,11 @@ footer nav li:not(:last-of-type) {
 	.main-navigation > div > ul > li {
 		transform: none;
 	}
+	.main-navigation .sub-menu {
+		position: absolute !important;
+		float: left !important;
+		width: 200px;
+	}
 	.main-navigation li {
 		transform: none !important;
 	}
@@ -1236,9 +1239,6 @@ footer nav li:not(:last-of-type) {
 		display: block;
 		padding: calc(var(--type__size) * .5);
 		text-decoration: none;
-	}
-	.main-navigation a:hover {
-		background-color: var(--color__base_500);
 	}
 	.main-navigation a:link, .main-navigation a:visited, .main-navigation a:hover, .main-navigation a:active {
 		color: var(--color__base_900);

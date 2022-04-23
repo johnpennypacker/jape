@@ -110,7 +110,7 @@ footer nav {
 }
 
 
-/** styles to include for menu display **/
+/** styles to include for small screen menu display **/
 .menu-hidden {
 	float: left;
 	position: absolute;
@@ -269,12 +269,12 @@ footer nav {
 		}
 		.submenu-toggle {
 			&[aria-expanded='true']::before {
-				background-color: var(--color__base_100);
 				content: '';
 				display: block;
 				height: 100vh;
 				left: 0;
-				opacity: .7;
+// 				background-color: var(--color__base_500);
+// 				opacity: .7;
 				top: 0;
 				position: fixed;
 				width: 100vw;
@@ -293,6 +293,13 @@ footer nav {
 			text-indent: 0;
 			position: relative;
 		}
+
+		.sub-menu {
+			position: absolute !important;
+			float: left !important;
+			width: 200px;
+		}
+
 		li {
 			transform: none !important;
 		}
@@ -303,11 +310,9 @@ footer nav {
 			background-color: var(--color__base_300);	
 			display: block;
 			padding: calc(var(--type__size) * .5);
-// 			position: relative;
-// 			z-index: 999999;
 			text-decoration: none;
 			&:hover {
-				background-color: var(--color__base_500);	
+// 				background-color: var(--color__base_500);	
 			}
 			&:link, 
 			&:visited, 
