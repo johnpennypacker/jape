@@ -76,7 +76,7 @@ footer nav {
 		}
 	}
 	.submenu-toggle {
-		background: var(--color__base_200);
+		background-color: var(--color__base_200);
 		border: 0;
 		cursor: pointer;
 		height: calc( var(--type__size) * 2.5);
@@ -84,8 +84,9 @@ footer nav {
 		display: inline-block;
 		text-indent: -999em;
 		position: absolute;
-		top: 0;
+		top:  calc( var(--type__size) * .5);
 		right: calc( var(--type__size) * .4);
+		transition: background .2s ease-in-out;
 	
 		&::after {
 			border: 1px solid #fff;
@@ -106,6 +107,13 @@ footer nav {
 			border-width: calc( var(--type__size) * .3);
 			transform: rotateZ(135deg);
 		}
+
+		&:hover,
+		&[aria-expanded='true'] {
+			background-color: var(--color__brand);
+		}
+		
+		
 	}
 }
 
@@ -173,7 +181,7 @@ footer nav {
 
 
 
-/* Toggle button and overall menu animation styles */
+/* Menu toggle button (mobile) and overall menu animation styles */
 @for $i from 1 through 10 {
   .main-navigation li:nth-child(#{$i}) {
     transform: translateY( $i * -1em );
@@ -258,7 +266,9 @@ footer nav {
 
 
 @media screen and (min-width: 37.5em) {
+
 	.main-navigation {
+		width: 100%;
 	// 	background-color: rgba(0,0,0,.2);	
 	// 	padding: .2rem;
 		&::before {
@@ -268,6 +278,7 @@ footer nav {
 			display: none;
 		}
 		.submenu-toggle {
+			top: 0;
 			&[aria-expanded='true']::before {
 				content: '';
 				display: block;
@@ -286,7 +297,7 @@ footer nav {
 			height: auto;
 			left: auto;
 			& > li {
-				transform: none;
+				transform: none !important;
 			}
 			display: flex;
 			flex-wrap: wrap;
@@ -296,12 +307,8 @@ footer nav {
 
 		.sub-menu {
 			position: absolute !important;
-			float: left !important;
+			//float: left !important;
 			width: 200px;
-		}
-
-		li {
-			transform: none !important;
 		}
 		ul, li, a {
 			height: auto;

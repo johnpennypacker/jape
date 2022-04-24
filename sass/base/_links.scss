@@ -6,10 +6,10 @@ a {
 	&:visited {
 		color: var(--color__visited);
 	}
-	&:hover {
-		/* this is fun because it only works on block level elements */
-		transform: translateX(-1px)translateY(-1px);
-	}
+// 	&:hover {
+// 		/* this is fun because it only works on block level elements */
+// 		transform: translateX(-1px)translateY(-1px);
+// 	}
 	&:hover,
 	&:focus,
 	&:active {

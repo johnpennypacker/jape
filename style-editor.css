@@ -763,11 +763,6 @@ a:visited {
 	color: var(--color__visited);
 }
 
-a:hover {
-	/* this is fun because it only works on block level elements */
-	transform: translateX(-1px) translateY(-1px);
-}
-
 a:hover, a:focus, a:active {
 	color: var(--color__active);
 	text-decoration: none;
@@ -984,7 +979,7 @@ footer nav li:not(:last-of-type) {
 }
 
 .main-navigation .submenu-toggle {
-	background: var(--color__base_200);
+	background-color: var(--color__base_200);
 	border: 0;
 	cursor: pointer;
 	height: calc( var(--type__size) * 2.5);
@@ -992,8 +987,9 @@ footer nav li:not(:last-of-type) {
 	display: inline-block;
 	text-indent: -999em;
 	position: absolute;
-	top: 0;
+	top: calc( var(--type__size) * .5);
 	right: calc( var(--type__size) * .4);
+	transition: background .2s ease-in-out;
 }
 
 .main-navigation .submenu-toggle::after {
@@ -1015,6 +1011,10 @@ footer nav li:not(:last-of-type) {
 .main-navigation .submenu-toggle[aria-expanded='true']::after {
 	border-width: calc( var(--type__size) * .3);
 	transform: rotateZ(135deg);
+}
+
+.main-navigation .submenu-toggle:hover, .main-navigation .submenu-toggle[aria-expanded='true'] {
+	background-color: var(--color__brand);
 }
 
 /** styles to include for small screen menu display **/
@@ -1071,7 +1071,7 @@ footer nav li:not(:last-of-type) {
 	padding-left: calc( var(--type__size) * 2) !important;
 }
 
-/* Toggle button and overall menu animation styles */
+/* Menu toggle button (mobile) and overall menu animation styles */
 .main-navigation li:nth-child(1) {
 	transform: translateY(-1em);
 }
@@ -1195,11 +1195,17 @@ footer nav li:not(:last-of-type) {
 
 /* End toggle button and overall menu animation styles */
 @media screen and (min-width: 37.5em) {
+	.main-navigation {
+		width: 100%;
+	}
 	.main-navigation::before {
 		content: none;
 	}
 	.main-navigation .menu-toggle {
 		display: none;
+	}
+	.main-navigation .submenu-toggle {
+		top: 0;
 	}
 	.main-navigation .submenu-toggle[aria-expanded='true']::before {
 		content: '';
@@ -1221,15 +1227,11 @@ footer nav li:not(:last-of-type) {
 		position: relative;
 	}
 	.main-navigation > div > ul > li {
-		transform: none;
+		transform: none !important;
 	}
 	.main-navigation .sub-menu {
 		position: absolute !important;
-		float: left !important;
 		width: 200px;
-	}
-	.main-navigation li {
-		transform: none !important;
 	}
 	.main-navigation ul, .main-navigation li, .main-navigation a {
 		height: auto;
