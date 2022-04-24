@@ -29,6 +29,10 @@ a {
 	&:not(.custom-logo-link):hover {
 		background-color: var(--color__link);
 		color: var(--color__base_900);
+
+// 		box-decoration-break: clone;
+// 		-webkit-box-decoration-break: clone;
+//  		box-shadow: 0 0 0 calc(var(--type__size) * .5) var(--color__link);
 	}
 }
 
@@ -128,7 +132,7 @@ h6 a:hover {
 	&:before {
 		content: '';
 		display: block;
-		border-top: 2px solid var(--color__brand);
+		border-top: 2px solid var(--color__link);
 		height: 0;
 		width: 0rem;
 		position: absolute;
@@ -140,7 +144,7 @@ h6 a:hover {
 	&:after {
 		content: '';
 		display: block;
-		border: 2px solid var(--color__brand);
+		border: 2px solid var(--color__link);
 		border-width: 2px 2px 0 0;
 		transform: translateX(0) rotateZ(45deg);
 		transition: all .2s ease-in-out;

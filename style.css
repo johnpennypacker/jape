@@ -1327,7 +1327,7 @@ h6 a {
 .arrow-right:before {
 	content: '';
 	display: block;
-	border-top: 2px solid var(--color__brand);
+	border-top: 2px solid var(--color__link);
 	height: 0;
 	width: 0rem;
 	position: absolute;
@@ -1340,7 +1340,7 @@ h6 a {
 .arrow-right:after {
 	content: '';
 	display: block;
-	border: 2px solid var(--color__brand);
+	border: 2px solid var(--color__link);
 	border-width: 2px 2px 0 0;
 	transform: translateX(0) rotateZ(45deg);
 	transition: all .2s ease-in-out;
@@ -1531,7 +1531,7 @@ footer nav li:not(:last-of-type) {
 }
 
 .main-navigation .submenu-toggle:hover, .main-navigation .submenu-toggle[aria-expanded='true'] {
-	background-color: var(--color__brand);
+	background-color: var(--color__link);
 }
 
 /** styles to include for small screen menu display **/
