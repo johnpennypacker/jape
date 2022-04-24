@@ -118,6 +118,7 @@ footer nav {
 }
 
 
+
 /** styles to include for small screen menu display **/
 .menu-hidden {
 	float: left;
@@ -269,8 +270,6 @@ footer nav {
 
 	.main-navigation {
 		width: 100%;
-	// 	background-color: rgba(0,0,0,.2);	
-	// 	padding: .2rem;
 		&::before {
 			content: none;
 		}
@@ -307,7 +306,6 @@ footer nav {
 
 		.sub-menu {
 			position: absolute !important;
-			//float: left !important;
 			width: 200px;
 		}
 		ul, li, a {
@@ -318,9 +316,6 @@ footer nav {
 			display: block;
 			padding: calc(var(--type__size) * .5);
 			text-decoration: none;
-			&:hover {
-// 				background-color: var(--color__base_500);	
-			}
 			&:link, 
 			&:visited, 
 			&:hover,
