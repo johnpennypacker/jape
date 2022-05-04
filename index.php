@@ -40,7 +40,7 @@ dynamic_sidebar( 'precontent' );
 				 */
 				get_template_part( 'template-parts/content', get_post_type() );
 
-				if ( 'post' === get_post_type() ) {
+				if ( is_single() && 'post' === get_post_type() ) {
 					the_post_navigation(
 						array(
 							'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'jape' ) . '</span> <span class="nav-title">%title</span>',
