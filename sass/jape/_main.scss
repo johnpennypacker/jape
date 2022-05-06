@@ -16,6 +16,9 @@ header.site-header {
 	margin: 0 0 calc(var(--type__size) * 1); 
 	padding: var(--type__size) var(--type__size) 0;
 }
+header.site-header.minimal {
+	padding-bottom: calc(var(--type__size) * .25);
+}
 
 .site-title {
 	font-size: calc(var(--type__size) * 2);
@@ -51,6 +54,14 @@ footer.site-footer {
 	color: var(--color__base_900);
 }
 
+
+@media (prefers-color-scheme: dark) {
+	footer.site-footer,
+	header.site-header.minimal {
+		background-color: var(--color__base_900);
+		color: var(--color__base_100);
+	}
+}
 
 
 .site-branding {
@@ -97,3 +108,20 @@ footer.site-footer {
 		text-align: left;
 	}
 }
+
+
+.tight {
+	margin-left: calc(var(--type__size)*.125);
+	margin-right: calc(var(--type__size)*.125);
+}
+.wp-block-columns.tight:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
+	margin-left: calc(var(--type__size)*.125);
+}
+
+.flush {
+	margin: 0;
+}
+.wp-block-columns.flush > .wp-block-column {
+	margin: 0 !important;
+}
+
