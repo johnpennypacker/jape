@@ -52,6 +52,7 @@
 		
 			var top = entry.boundingClientRect.top;
 			var height = entry.boundingClientRect.height;
+			var width = entry.boundingClientRect.width;
 			var pct = 0;
 			var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
@@ -59,6 +60,7 @@
 			// set the distance from the top of the element to the top of the viewport
 			entry.target.style.setProperty( '--from-top', top );
 			entry.target.style.setProperty( '--height', height );
+			entry.target.style.setProperty( '--width', width );
 			entry.target.dataset.isIntersecting = entry.isIntersecting;
 			entry.target.style.setProperty( '--intersecting', entry.isIntersecting );
 			

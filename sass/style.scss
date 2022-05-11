@@ -23,7 +23,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'jape/fonts';
 @import 'jape/variables';
 @import 'jape/main';
-@import 'jape/blocks';
+@import 'jape/blocks-wp';
+@import 'jape/blocks-custom';
 @import 'jape/login';
 
 @import 'generic/normalize';

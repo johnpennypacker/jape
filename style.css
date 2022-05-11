@@ -356,6 +356,43 @@ input:hover[type="submit"] {
 	}
 }
 
+.sidler {
+	color: inherit;
+	margin-bottom: 6rem;
+	position: relative;
+	width: 100vw;
+}
+
+.sidler .line {
+	font-size: 40vh;
+	line-height: 25vh;
+	white-space: nowrap;
+	min-width: fit-content;
+	mix-blend-mode: exclusion;
+}
+
+.sidler .line {
+	--start: calc(1px * var(--width));
+	--range: calc(var(--start) + calc(1px * var(--line-width)));
+	--pct: var(--mid-percent);
+	/* Restricts the range so there's less white space
+		--start: 0px;
+		--range: 100vw;
+	 */
+	position: relative;
+	/*  	left: calc(var(--start) - calc(var(--range) * var(--top-percent))); */
+	transform: translateX(calc(var(--start) - calc(var(--range) * var(--pct))));
+	transition: .1s transform ease;
+}
+
+.sidler .line.rtl {
+	transform: translateX(calc(var(--start) - calc(var(--range) * calc(1 - var(--pct)))));
+}
+
+.sidler + .sidler {
+	margin-top: -6rem;
+}
+
 @keyframes shake {
 	25% {
 		transform: translateX(-20px);

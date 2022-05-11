@@ -7,9 +7,22 @@
  * @package jape
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+if ( ! defined( '_JAPE_VERSION' ) ) {
+	define( '_JAPE_VERSION', wp_get_theme()->get( 'Version' ) );
+}
+
+/**
+ * Returns a string to be used for cache busting
+ *
+ * @return str
+ */
+function jape_cache_buster() {
+	static $cache_buster;
+	if ( empty( $cache_buster ) ) {
+		$cache_buster = _JAPE_VERSION;
+		$cache_buster = date(time());
+	}
+	return $cache_buster;
 }
 
 /**
@@ -203,11 +216,11 @@ add_action( 'widgets_init', 'jape_widgets_init' );
  * Enqueue scripts and styles.
  */
 function jape_scripts() {
-	wp_enqueue_style( 'jape-style', get_template_directory_uri() . '/style.css', array(), _S_VERSION );
+	wp_enqueue_style( 'jape-style', get_template_directory_uri() . '/style.css', array(), jape_cache_buster() );
 	wp_style_add_data( 'jape-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'jape-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'jape-flair', get_template_directory_uri() . '/js/flair.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'jape-navigation', get_template_directory_uri() . '/js/navigation.js', array(), jape_cache_buster(), true );
+	wp_enqueue_script( 'jape-flair', get_template_directory_uri() . '/js/flair.js', array(), jape_cache_buster(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -272,6 +285,11 @@ require get_template_directory() . '/inc/admin-login.php';
  * Custom settings for Display Posts Shortcode plugin.
  */
 require get_template_directory() . '/inc/dps.php';
+
+/**
+ * Add custom blocks
+ */
+require get_template_directory() . '/inc/blocks.php';
 
 /**
  * Load Jetpack compatibility file.
