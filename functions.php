@@ -220,7 +220,6 @@ function jape_scripts() {
 	wp_style_add_data( 'jape-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'jape-navigation', get_template_directory_uri() . '/js/navigation.js', array(), jape_cache_buster(), true );
-	wp_enqueue_script( 'jape-flair', get_template_directory_uri() . '/js/flair.js', array(), jape_cache_buster(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -285,11 +284,6 @@ require get_template_directory() . '/inc/admin-login.php';
  * Custom settings for Display Posts Shortcode plugin.
  */
 require get_template_directory() . '/inc/dps.php';
-
-/**
- * Add custom blocks
- */
-require get_template_directory() . '/inc/blocks.php';
 
 /**
  * Load Jetpack compatibility file.
