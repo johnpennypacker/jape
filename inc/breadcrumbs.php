@@ -110,12 +110,12 @@ function jape_get_current_path( $strip = true ) {
  */
 function jape_breadcrumbs() {
 	$crumbs  = array();
+	$default = NULL;
 
 	$option_val = get_theme_mod( 'jape_breadcrumbs_prepend' );
 	
 	if( TRUE === MULTISITE ) {
 		$main_site_id = get_network()->site_id;
-		$default = NULL;
 		if ( $main_site_id !== get_current_blog_id() ) {
 			$multisite = get_blog_details( array( 'blog_id' =>  $main_site_id ) );
 			$default = '[' . $multisite->blogname . '](' . $multisite->siteurl . ')';
