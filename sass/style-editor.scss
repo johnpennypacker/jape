@@ -22,7 +22,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @import 'jape/fonts';
 @import 'jape/variables';
-@import 'jape/blocks';
+@import 'jape/main';
+@import 'jape/blocks-wp';
+@import 'jape/login';
 
 @import 'generic/normalize';
 
@@ -42,10 +44,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'components/galleries';
 
 @import 'plugins/jetpack';
+@import 'plugins/dps';
 
 @import 'utilities/accessibility';
 @import 'utilities/alignment';
-
 
 html {
 	background-color: var(--color_brand);
