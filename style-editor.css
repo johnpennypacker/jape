@@ -2195,4 +2195,14 @@ body {
 	text-decoration: underline;
 }
 
+.block-editor-plain-text {
+	background-color: var(--color__base_900);
+	color: var(--color__base_100);
+}
+
+.components-placeholder.components-placeholder {
+	background-color: var(--color__base_800);
+	color: var(--color__base_100);
+}
+
 /*# sourceMappingURL=style-editor.css.map */
