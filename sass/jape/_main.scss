@@ -125,3 +125,7 @@ footer.site-footer {
 	margin: 0 !important;
 }
 
+.wp-block-columns.equal-height > .wp-block-column {
+	display: flex;
+}
+
