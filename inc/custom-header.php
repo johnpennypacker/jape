@@ -24,7 +24,7 @@ function jape_custom_header_setup() {
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
-				'width'              => 1000,
+				'width'              => 2000,
 				'height'             => '',
 				'flex-height'        => true,
 				'wp-head-callback'   => 'jape_header_style',
