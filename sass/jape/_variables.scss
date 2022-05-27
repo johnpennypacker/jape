@@ -10,9 +10,9 @@
 	--color__base_900: #fff;
 
 	--color__brand: #cc0000;
-	--color__brand_fg: #fff;
+	--color__brand_contrast: #fff;
 	--color__accent: #1f7789;
-	--color__accent_fg: #fff;
+	--color__accent_contrast: #fff;
 	--color__highlight: #f4d751;
 	--color__highlight_text: #000;
 	
@@ -21,6 +21,7 @@
 	--color__error: #d63638;
 	
 	--color__link: var(--color__brand);
+	--color__link_contrast: var(--color__brand_contrast);
  	--color__visited: var(--color__base_100);
 	--color__hover: var(--color__base_100);
 // 	--color__active: var(--color__base_100);
@@ -47,4 +48,6 @@
 	--type__sans: 'plex-sans', sans-serif;
 	--type__serif: 'lora', serif;
 	--type__mono: 'plex-mono', monospace;
+
+	--width__page: 64ch;
 }
