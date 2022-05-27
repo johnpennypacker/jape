@@ -269,11 +269,16 @@ footer.site-footer {
 	display: flex;
 }
 
-.wp-block-cover,
+.wp-block-quote,
 .wp-block-buttons,
+.wp-block-cover,
 .wp-block-media-text,
 .wp-block-navigation {
 	margin: 0 0 calc(var(--type__size) * 1.5);
+}
+
+.wp-block-quote.is-style-large:not(.is-style-plain) {
+	margin-bottom: calc(var(--type__size) * 2.5);
 }
 
 .wp-block-cover .wp-block-cover__inner-container .alignwide {
