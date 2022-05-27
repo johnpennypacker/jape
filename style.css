@@ -165,7 +165,8 @@ header.site-header.minimal {
 .site-footer > div,
 .site-footer > nav,
 main,
-.breadcrumbs {
+.breadcrumbs,
+.widget_block {
 	max-width: var(--width__page);
 	margin: 0 auto;
 	padding: 0 var(--type__size);
