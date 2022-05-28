@@ -126,20 +126,17 @@ h6 a:hover {
 	color: var(--color__brand_contrast);
 }
 
-
-.arrow-right {
+.arrow {
 	position: relative;
 	&:before {
 		content: '';
 		display: block;
 		border-top: 2px solid var(--color__link);
 		height: 0;
-		width: 0rem;
+		width: 0;
 		position: absolute;
 		transition: all .15s ease-in;
 		top: .575rem;
-		right: -1rem;
-		left: calc(100% + 1rem);
 	}
 	&:after {
 		content: '';
@@ -152,7 +149,6 @@ h6 a:hover {
 		width: .5rem;
 		position: absolute;
 		top: .375rem;
-		right: -1rem;
 	}
 	&:hover {
 		&:before {
@@ -160,6 +156,36 @@ h6 a:hover {
 		}
 		&:after {
 			transform: translateX(1rem) rotateZ(45deg);
+		}
+	}
+}
+
+.arrow-right {
+	@extend .arrow;
+	&:before {
+		right: -1rem;
+		left: calc(100% + 1rem);
+	}
+	&:after {
+		right: -1rem;
+	}
+}
+
+.arrow-left {
+	@extend .arrow;
+	&:before {
+		left: -1rem;
+	}
+	&:after {
+		border-width: 0 0 2px 2px;
+		left: -1rem;
+	}
+	&:hover {
+		&:before {
+			transform: translateX(-1rem);
+		}
+		&:after {
+			transform: translateX(-1rem) rotateZ(45deg);
 		}
 	}
 }

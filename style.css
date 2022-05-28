@@ -1372,24 +1372,22 @@ h6 a {
 	color: var(--color__brand_contrast);
 }
 
-.arrow-right {
+.arrow, .arrow-right, .arrow-left {
 	position: relative;
 }
 
-.arrow-right:before {
+.arrow:before, .arrow-right:before, .arrow-left:before {
 	content: '';
 	display: block;
 	border-top: 2px solid var(--color__link);
 	height: 0;
-	width: 0rem;
+	width: 0;
 	position: absolute;
 	transition: all .15s ease-in;
 	top: .575rem;
-	right: -1rem;
-	left: calc(100% + 1rem);
 }
 
-.arrow-right:after {
+.arrow:after, .arrow-right:after, .arrow-left:after {
 	content: '';
 	display: block;
 	border: 2px solid var(--color__link);
@@ -1400,15 +1398,40 @@ h6 a {
 	width: .5rem;
 	position: absolute;
 	top: .375rem;
-	right: -1rem;
 }
 
-.arrow-right:hover:before {
+.arrow:hover:before, .arrow-right:hover:before, .arrow-left:hover:before {
 	width: 1rem;
 }
 
-.arrow-right:hover:after {
+.arrow:hover:after, .arrow-right:hover:after, .arrow-left:hover:after {
 	transform: translateX(1rem) rotateZ(45deg);
+}
+
+.arrow-right:before {
+	right: -1rem;
+	left: calc(100% + 1rem);
+}
+
+.arrow-right:after {
+	right: -1rem;
+}
+
+.arrow-left:before {
+	left: -1rem;
+}
+
+.arrow-left:after {
+	border-width: 0 0 2px 2px;
+	left: -1rem;
+}
+
+.arrow-left:hover:before {
+	transform: translateX(-1rem);
+}
+
+.arrow-left:hover:after {
+	transform: translateX(-1rem) rotateZ(45deg);
 }
 
 /* Forms
