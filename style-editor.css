@@ -269,8 +269,10 @@ footer.site-footer {
 	margin-top: calc(var(--type__size)*-1.5);
 }
 
-.pverlap-top {
+.overlap-top {
 	margin-top: calc(var(--type__size)*-4);
+	position: relative;
+	z-index: 9;
 }
 
 .wp-block-columns.equal-height > .wp-block-column {
