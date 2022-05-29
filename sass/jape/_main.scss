@@ -127,10 +127,10 @@ footer.site-footer {
 }
 
 .flush-top {
-	margin-top: calc(var(--type__size)*-1.5);
+	margin-top: calc(var(--type__size)*-1.5) !important;
 }
 .overlap-top {
-	margin-top: calc(var(--type__size)*-4);
+	margin-top: calc(var(--type__size)*-4) !important;
 	position: relative;
 	z-index: 9;
 }
