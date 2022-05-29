@@ -310,11 +310,10 @@ footer.site-footer {
 .wp-block-button > div, input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 2px solid;
-	border-color: var(--color__brand);
+	border-width: 0;
 	border-radius: 3px;
-	background: var(--color__brand);
-	color: var(--color__base_900);
+	background-color: var(--color__link);
+	color: var(--color__base_100);
 	cursor: pointer;
 	font-size: var(--type__size);
 	line-height: 1;
@@ -326,8 +325,10 @@ input[type="submit"] {
 .wp-block-button > div:hover, input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"] {
-	background: var(--color__base_100);
-	border-color: var(--color__base_100);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	background-color: var(--color__base_900) !important;
+	color: var(--color__base_100) !important;
+	transform: translateY(-1px);
 }
 
 .wp-block-button.is-style-outline a:hover {
