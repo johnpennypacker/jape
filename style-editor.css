@@ -105,7 +105,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__link: var(--color__brand);
 	--color__link_contrast: var(--color__brand_contrast);
 	--color__visited: var(--color__base_100);
-	--color__hover: var(--color__base_100);
+	--color__hover: #f00;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -310,7 +310,7 @@ footer.site-footer {
 .wp-block-button > div, input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border-width: 0;
+	border: 2px solid var(--color__link);
 	border-radius: 3px;
 	background-color: var(--color__link);
 	color: var(--color__base_100);
@@ -325,14 +325,20 @@ input[type="submit"] {
 .wp-block-button > div:hover, input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"] {
+	background-color: var(--color__hover) !important;
+	border-color: var(--color__hover);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-	background-color: var(--color__base_900) !important;
 	color: var(--color__base_100) !important;
 	transform: translateY(-1px);
 }
 
+.wp-block-button.is-style-outline a {
+	background: var(--color__base_900) !important;
+	border-width: 2px;
+}
+
 .wp-block-button.is-style-outline a:hover {
-	background: var(--color__base_800);
+	background: var(--color__base_800) !important;
 }
 
 .blocks-shortcode__textarea {
