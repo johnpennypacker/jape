@@ -166,7 +166,8 @@ header.site-header.minimal {
 .site-footer > nav,
 main,
 .breadcrumbs,
-.widget_block {
+.widget_block,
+.column-width {
 	max-width: var(--width__page);
 	margin: 0 auto;
 	padding: 0 var(--type__size);
@@ -281,6 +282,10 @@ footer.site-footer {
 
 .no-bottom-margin {
 	margin-bottom: 0;
+}
+
+.padded {
+	padding: calc(var(--type__size)*1.5);
 }
 
 .wp-block-quote,
