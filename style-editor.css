@@ -265,16 +265,20 @@ footer.site-footer {
 	margin: 0 !important;
 }
 
+.flush-top {
+	margin-top: calc(var(--type__size)*-1.5);
+}
+
+.pverlap-top {
+	margin-top: calc(var(--type__size)*-4);
+}
+
 .wp-block-columns.equal-height > .wp-block-column {
 	display: flex;
 }
 
 .no-bottom-margin {
 	margin-bottom: 0;
-}
-
-.overlap {
-	margin-top: calc(var(--type__size)*-4);
 }
 
 .wp-block-quote,
