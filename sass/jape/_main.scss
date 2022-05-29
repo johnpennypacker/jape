@@ -130,3 +130,11 @@ footer.site-footer {
 	display: flex;
 }
 
+.no-bottom-margin {
+	margin-bottom: 0;
+}
+
+.overlap {
+	margin-top: calc(var(--type__size)*-4);
+}
+
