@@ -240,6 +240,7 @@ function jape_is_minimal() {
 }
 
 
+
 /**
  * Implement the Custom Header feature.
  */

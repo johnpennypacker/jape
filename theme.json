@@ -1,0 +1,71 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "patterns": [ "short-text-surrounded-by-round-images", "partner-logos" ],
+  "settings": {
+		"color": {
+			"custom": false
+		},
+		"spacing": {
+			"margin": false,
+			"padding": false,
+			"blockGap": false,
+			"units": [ "px", "rem", "vh", "vw" ]
+		},
+		"typography": {
+			"customFontSize": true,
+			"lineHeight": false,
+			"dropCap": false,
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"textDecoration": false,
+			"textTransform": false,
+			"fontSizes": [
+				{
+					"size": "var(--type__size)",
+					"slug": "small",
+					"name": "Normal"
+				},
+				{
+					"size": "calc(var(--type__size)*2)",
+					"slug": "large",
+					"name": "Large"
+				},
+				{
+					"size": "clamp(1.75rem, 3vw, 2.25rem)",
+					"slug": "x-large",
+					"name": "Extra"
+				}
+			],
+			"fontFamilies": []
+		},
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": false
+        },
+        "color": {
+        	"background": false,
+        	"custom": false,
+        	"customGradient": false,
+        	"gradients": false,
+          "palette": false
+        },
+        "width": {
+        	"custom": false
+        }
+      },
+      "core/quote": {
+        "border": {
+          "customRadius": false
+        }
+      }
+    }
+  },
+	"styles": {
+		"spacing": {
+			"blockGap": "calc(var(--type__size) * 2)"
+		}
+	}
+}
