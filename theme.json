@@ -1,10 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 2,
-  "patterns": [ "short-text-surrounded-by-round-images", "partner-logos" ],
+  "patterns": [],
   "settings": {
 		"color": {
-			"custom": false
+			"background": false,
+			"custom": false,
+			"customGradient": false,
+			"gradients": false,
+			"palette": false
 		},
 		"spacing": {
 			"margin": false,
@@ -23,19 +27,14 @@
 			"textTransform": false,
 			"fontSizes": [
 				{
+					"name": "Normal",
 					"size": "var(--type__size)",
-					"slug": "small",
-					"name": "Normal"
+					"slug": "normal"
 				},
 				{
+					"name": "Large",
 					"size": "calc(var(--type__size)*2)",
-					"slug": "large",
-					"name": "Large"
-				},
-				{
-					"size": "clamp(1.75rem, 3vw, 2.25rem)",
-					"slug": "x-large",
-					"name": "Extra"
+					"slug": "large"
 				}
 			],
 			"fontFamilies": []
@@ -52,15 +51,56 @@
         	"gradients": false,
           "palette": false
         },
+				"typography": {
+					"customFontSize": false,
+					"fontSizes": []
+				},
         "width": {
         	"custom": false
         }
       },
-      "core/quote": {
+      "core/heading": {
+        "color": {
+        	"background": false,
+        	"custom": false,
+        	"customGradient": false,
+        	"gradients": false,
+          "palette": false
+        },
+				"typography": {
+					"customFontSize": false,
+					"fontSizes": []
+				}
+      },
+      "core/pullquote": {
         "border": {
-          "customRadius": false
-        }
-      }
+          "radius": false,
+          "color": false
+        },
+				"typography": {
+					"customFontSize": false,
+					"fontSizes": []
+				}
+      },
+      "core/quote": {
+				"typography": {
+					"customFontSize": false,
+					"fontSizes": []
+				}
+      },
+      "core/table": {
+        "color": {
+        	"background": false,
+        	"custom": false,
+        	"customGradient": false,
+        	"gradients": false,
+          "palette": false
+        },
+				"typography": {
+					"customFontSize": false,
+					"fontSizes": []
+				}
+      },
     }
   },
 	"styles": {

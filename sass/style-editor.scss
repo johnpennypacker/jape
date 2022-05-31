@@ -66,7 +66,8 @@ body {
 	}
 }
 
-.block-editor-plain-text {
+.block-editor-plain-text,
+.components-text-control__input {
 	background-color: var(--color__base_900);
 	color: var(--color__base_100);
 }

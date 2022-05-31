@@ -346,6 +346,11 @@ input:hover[type="submit"] {
 	font-size: calc(var(--type__size) * .85);
 }
 
+.wp-block-pullquote {
+	border-left-width: 0 !important;
+	border-right: 0 !important;
+}
+
 .wp-block-query ul {
 	margin-left: 0;
 	padding-left: 0;
@@ -2252,7 +2257,8 @@ body {
 	text-decoration: underline;
 }
 
-.block-editor-plain-text {
+.block-editor-plain-text,
+.components-text-control__input {
 	background-color: var(--color__base_900);
 	color: var(--color__base_100);
 }

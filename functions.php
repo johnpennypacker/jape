@@ -240,6 +240,16 @@ function jape_is_minimal() {
 }
 
 
+function jape_customize_blocks() {
+	wp_enqueue_script(
+		'jape-block-editor',
+		get_template_directory_uri() . '/js/block-editor.js',
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+		jape_cache_buster(),
+		TRUE
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'jape_customize_blocks' );
 
 /**
  * Implement the Custom Header feature.
