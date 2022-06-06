@@ -53,13 +53,6 @@
         "border": {
           "radius": false
         },
-        "color": {
-        	"background": false,
-        	"custom": false,
-        	"customGradient": false,
-        	"gradients": false,
-          "palette": false
-        },
 				"typography": {
 					"customFontSize": false,
 					"fontSizes": []
@@ -69,26 +62,10 @@
         }
       },
       "core/heading": {
-        "color": {
-        	"background": false,
-        	"custom": false,
-        	"customGradient": false,
-        	"gradients": false,
-          "palette": false
-        },
 				"typography": {
 					"customFontSize": false,
 					"fontSizes": []
 				}
-      },
-      "core/paragraph": {
-        "color": {
-        	"background": false,
-        	"custom": false,
-        	"customGradient": false,
-        	"gradients": false,
-          "palette": false
-        }
       },
       "core/pullquote": {
         "border": {
@@ -107,13 +84,6 @@
 				}
       },
       "core/table": {
-        "color": {
-        	"background": false,
-        	"custom": false,
-        	"customGradient": false,
-        	"gradients": false,
-          "palette": false
-        },
 				"typography": {
 					"customFontSize": false,
 					"fontSizes": []
