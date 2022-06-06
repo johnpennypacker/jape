@@ -9,11 +9,12 @@
 	},
   "settings": {
 		"color": {
-			"background": false,
+			"background": [],
 			"custom": false,
-			"customGradient": false,
-			"gradients": false,
-			"palette": false
+			"customGradient": [],
+			"gradients": [],
+			"palette": [],
+			"defaultPalette": false
 		},
 		"layout": {
 			 "contentSize": "var(--width__page)",
