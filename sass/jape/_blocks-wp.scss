@@ -8,6 +8,13 @@
 .wp-block-quote.is-style-large:not(.is-style-plain) {
 	margin-bottom: calc(var(--type__size) * 2.5);
 }
+.wp-block-quote cite,
+.wp-block-pullquote cite {
+	font-size: calc(var(--type__size) * .9);
+	&:before {
+		content: "— ";
+	}
+}
 
 .wp-block-cover .wp-block-cover__inner-container .alignwide {
 	max-width: 80vw;

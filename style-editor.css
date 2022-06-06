@@ -300,6 +300,16 @@ footer.site-footer {
 	margin-bottom: calc(var(--type__size) * 2.5);
 }
 
+.wp-block-quote cite,
+.wp-block-pullquote cite {
+	font-size: calc(var(--type__size) * .9);
+}
+
+.wp-block-quote cite:before,
+.wp-block-pullquote cite:before {
+	content: "— ";
+}
+
 .wp-block-cover .wp-block-cover__inner-container .alignwide {
 	max-width: 80vw;
 	margin-left: 10vw;

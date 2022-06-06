@@ -65,8 +65,7 @@ function jape_setup() {
 	
 	add_theme_support('editor-styles');
 	add_editor_style( 'style-editor.css' );
-
-
+	
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
