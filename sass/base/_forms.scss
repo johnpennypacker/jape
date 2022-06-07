@@ -33,9 +33,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: var(--color__base_300);
+	background-color: var(--color__base_900);
 	border: 1px solid var(--color__base_600);
 	border-radius: 3px;
+	color: var(--color__base_300);
 	padding: 3px;
 }
 

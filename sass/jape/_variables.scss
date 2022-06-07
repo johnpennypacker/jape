@@ -49,5 +49,7 @@
 	--type__serif: 'lora', serif;
 	--type__mono: 'plex-mono', monospace;
 
-	--width__page: 64ch;
+	--width__column_full: 44rem;
+	--width__column_half: calc(var(--width__column_full)*.5);
+	--width__column_third: calc(var(--width__column_full)*.33);
 }

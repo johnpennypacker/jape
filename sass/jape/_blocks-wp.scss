@@ -57,6 +57,10 @@
 .block-editor-button-block-appender {
 }
 
+.wp-block-image img {
+	// width: 100%; // !! can oversample small images on large screens
+}
+
 .blocks-shortcode__textarea {
 	font-family: var(--type__mono);
 	font-size: calc(var(--type__size) * .85);

@@ -17,7 +17,7 @@
 			"defaultPalette": false
 		},
 		"layout": {
-			 "contentSize": "var(--width__page)",
+			 "contentSize": "var(--width__column_full)",
 			 "wideSize": "80ch"
 		 },
 		"spacing": {

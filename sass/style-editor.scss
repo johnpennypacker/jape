@@ -55,6 +55,10 @@ html {
 body {
 	background-color: var(--color__base_900);
 }
+
+h1.wp-block-post-title {
+	width: var(--width__column_full);
+}
 .site-title {
 	font-weight: 400;
 	a:link,

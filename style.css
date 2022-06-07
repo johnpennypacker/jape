@@ -127,7 +127,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--type__sans: 'plex-sans', sans-serif;
 	--type__serif: 'lora', serif;
 	--type__mono: 'plex-mono', monospace;
-	--width__page: 64ch;
+	--width__column_full: 44rem;
+	--width__column_half: calc(var(--width__column_full)*.5);
+	--width__column_third: calc(var(--width__column_full)*.33);
 }
 
 /*--------------------------------------------------------------
@@ -168,7 +170,7 @@ main,
 .breadcrumbs,
 .widget_block,
 .column-width {
-	max-width: var(--width__page);
+	max-width: var(--width__column_full);
 	margin: 0 auto;
 	padding: 0 var(--type__size);
 }
@@ -1493,9 +1495,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: var(--color__base_300);
+	background-color: var(--color__base_900);
 	border: 1px solid var(--color__base_600);
 	border-radius: 3px;
+	color: var(--color__base_300);
 	padding: 3px;
 }
 
@@ -2182,6 +2185,7 @@ html .site .alignleft, html .site .dps .image, .dps html .site .image {
 		margin-right: calc(var(--type__size)*1.5);
 		margin-left: calc(25% - 25vw);
 		max-width: 100vw;
+		min-width: calc(25vw);
 		width: auto;
 	}
 }
@@ -2211,6 +2215,7 @@ html .site .alignright {
 		margin-left: calc(var(--type__size)*1.5);
 		margin-right: calc(25% - 25vw);
 		max-width: 100vw;
+		min-width: calc(25vw);
 		width: auto;
 	}
 }
