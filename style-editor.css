@@ -168,8 +168,8 @@ header.site-header.minimal {
 .site-footer > nav,
 main,
 .breadcrumbs,
-.widget_block,
-.column-width {
+.column-width,
+.widget-area {
 	max-width: var(--width__column_full);
 	margin: 0 auto;
 	padding: 0 var(--type__size);
@@ -295,7 +295,7 @@ footer.site-footer {
 .wp-block-cover,
 .wp-block-media-text,
 .wp-block-navigation {
-	margin-bottom: calc(var(--type__size) * 1.5);
+	margin-bottom: var(--wp--style--block-gap, calc(var(--type__size) * 1.5));
 }
 
 .wp-block-quote.is-style-large:not(.is-style-plain) {

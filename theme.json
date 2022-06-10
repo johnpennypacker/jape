@@ -8,6 +8,10 @@
 		}
 	},
   "settings": {
+		"appearanceTools": true,
+		"border": {
+			"radius": false
+		},
 		"color": {
 			"background": [],
 			"custom": false,
@@ -23,8 +27,7 @@
 		"spacing": {
 			"margin": false,
 			"padding": false,
-			"blockGap": false,
-			"units": [ "px", "rem", "vh", "vw" ]
+			"units": [ "px", "rem", "vh", "vw", "%" ]
 		},
 		"typography": {
 			"customFontSize": true,

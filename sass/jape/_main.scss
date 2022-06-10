@@ -34,8 +34,8 @@ header.site-header.minimal {
 .site-footer > nav,
 main,
 .breadcrumbs,
-.widget_block,
-.column-width {
+.column-width,
+.widget-area {
 	max-width: var(--width__column_full);
 	margin: 0 auto;
 	padding: 0 var(--type__size);
