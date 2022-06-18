@@ -111,6 +111,14 @@ footer.site-footer {
 	}
 }
 
+.entry-content::after {
+	content: " ";
+	clear: both;
+	display: block;
+	margin-bottom: var(--type__size);
+}
+
+
 
 .tight {
 	margin-left: calc(var(--type__size)*.125);

@@ -251,6 +251,13 @@ footer.site-footer {
 	text-align: left;
 }
 
+.entry-content::after {
+	content: " ";
+	clear: both;
+	display: block;
+	margin-bottom: var(--type__size);
+}
+
 .tight {
 	margin-left: calc(var(--type__size)*.125);
 	margin-right: calc(var(--type__size)*.125);
