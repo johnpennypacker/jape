@@ -28,10 +28,12 @@
 }
 .site-main .comment-navigation,
 .site-main
-.posts-navigation,
 .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 calc(var(--type__size) * 1.5);
+}
+.posts-navigation {
+	margin: 0 0 calc(var(--type__size) * 3);
 }
 
 .comment-navigation .nav-links,
