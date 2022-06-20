@@ -80,3 +80,14 @@ h1.wp-block-post-title {
 	background-color: var(--color__base_800);
 	color: var(--color__base_100);
 }
+
+.wp-block.alignfull {
+	left: 0;
+	margin-left: 0;
+	width: 100%;
+}
+
+.wp-block-image {
+display: flex;
+flex-direction: column;
+}

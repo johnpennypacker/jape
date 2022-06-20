@@ -102,7 +102,11 @@ samp {
   font-size: calc(var(--type__size) * .9);
 }
 var {
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	background-color: rgba(255,255,255,0.8);
 	color: var(--color__accent);
+	font-weight: bold;
 }
 samp {
 	font-weight: bold;
