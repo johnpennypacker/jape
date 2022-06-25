@@ -78,7 +78,7 @@ footer nav {
 		}
 	}
 	.submenu-toggle {
-		background-color: var(--color__base_300);
+		background-color: inherit;
 		border: 0;
 		cursor: pointer;
 		height: calc( var(--type__size) * 2.5);
@@ -91,8 +91,8 @@ footer nav {
 		transition: background .2s ease-in-out;
 	
 		&::after {
-			border: 1px solid var(--color__base_900);
-			border-color: var(--color__base_900) var(--color__base_900) transparent transparent;
+			border: 1px solid var(--color__base_100);
+			border-color: var(--color__base_100) var(--color__base_100) transparent transparent;
 			border-width: 1px 1px 0 0;
 			content: '';
 			display: block;
@@ -110,18 +110,9 @@ footer nav {
 			transform: rotateZ(135deg);
 		}
 
-		&:hover,
-		&[aria-expanded='true'] {
-			background-color: var(--color__link);
-			color: var(--color__link_contrast);
+		&:hover {
+			background-color: var(--color__base_700);
 		}
-
-		&:hover::after,
-		&[aria-expanded='true']::after {
-// 			background-color: var(--color__link);
-			border-color: var(--color__link_contrast) var(--color__link_contrast) transparent transparent;
-		}
-		
 		
 	}
 }
@@ -319,7 +310,8 @@ footer nav {
 			height: auto;
 		}
 		a {
-			background-color: var(--color__base_300);	
+			background-color: var(--color__base_900);	
+			color: var(--color__base_100);	
 			display: block;
 			padding: calc(var(--type__size) * .5);
 			text-decoration: none;
@@ -327,7 +319,7 @@ footer nav {
 			&:visited, 
 			&:hover,
 			&:active {
-				color: var(--color__base_900);	
+				//color: var(--color__base_900);	
 			}
 		}
 		li:not(:last-of-type) a {
@@ -335,50 +327,3 @@ footer nav {
 		}
 	}	
 }
-
-
-@media (prefers-color-scheme: dark) {
-	.main-navigation {
-		.submenu-toggle {
-			background-color: var(--color__base_700);
-			color: var(--color__base_100);
-			&::after {
-				border: 1px solid var(--color__base_100);
-				border-color: var(--color__base_100) var(--color__base_100) transparent transparent;
-			}
-		}
-		li.current_page_item > a {
-			background-color: var(--color__base_800);	
-			color: var(--color__base_100);
-		}
-		.menu-toggle {
-			background-color: var(--color__base_800);	
-			color: var(--color__base_100);
-			&:hover {
-				background-color: var(--color__base_900);	
-			}
-		}
-
-		&.toggled {
-			&::before {
-				background-color: var(--color__base_800);
-			}
-			.menu-toggle::before,
-			.menu-toggle::after {
-				border-top: 1px solid var(--color__base_100);
-			}
-		}
-
-		li a {
-			background-color: var(--color__base_700);	
-			&:link, 
-			&:visited, 
-			&:hover,
-			&:active {
-				color: var(--color__base_100);	
-			}
-		}
-
-	}
-}
-

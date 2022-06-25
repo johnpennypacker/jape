@@ -27,7 +27,7 @@
 	border: 2px solid var(--color__link);
 	border-radius: 3px;
 	background-color: var(--color__link);
-	color: var(--color__base_100);
+	color: var(--color__link_contrast);
 	cursor: pointer;
 	font-size: var(--type__size);
 	line-height: 1;
@@ -37,7 +37,7 @@
 		background-color: var(--color__hover) !important;
 		border-color: var(--color__hover);
 		box-shadow: 0 1px 1px rgba(0,0,0,.5);
-		color: var(--color__base_100) !important;
+		color: var(--color__hover_contrast) !important;
 		transform: translateY(-1px);
 	}
 }

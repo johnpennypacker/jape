@@ -106,6 +106,21 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__link_contrast: var(--color__brand_contrast);
 	--color__visited: var(--color__base_100);
 	--color__hover: #f00;
+	--color__hover_contrast: var(--color__brand_contrast);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color__base_900: #111;
+		--color__base_800: #212121;
+		--color__base_700: #333;
+		--color__base_600: #6c6c6c;
+		--color__base_500: #969696;
+		--color__base_400: #d7d7d7;
+		--color__base_300: #e3e3e3;
+		--color__base_200: #efefef;
+		--color__base_100: #fff;
+	}
 }
 
 :root {
@@ -314,7 +329,7 @@ input[type="submit"] {
 	border: 2px solid var(--color__link);
 	border-radius: 3px;
 	background-color: var(--color__link);
-	color: var(--color__base_100);
+	color: var(--color__link_contrast);
 	cursor: pointer;
 	font-size: var(--type__size);
 	line-height: 1;
@@ -329,7 +344,7 @@ input:hover[type="submit"] {
 	background-color: var(--color__hover) !important;
 	border-color: var(--color__hover);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-	color: var(--color__base_100) !important;
+	color: var(--color__hover_contrast) !important;
 	transform: translateY(-1px);
 }
 
@@ -1593,7 +1608,7 @@ footer nav li:not(:last-of-type) {
 }
 
 .main-navigation .submenu-toggle {
-	background-color: var(--color__base_300);
+	background-color: inherit;
 	border: 0;
 	cursor: pointer;
 	height: calc( var(--type__size) * 2.5);
@@ -1607,8 +1622,8 @@ footer nav li:not(:last-of-type) {
 }
 
 .main-navigation .submenu-toggle::after {
-	border: 1px solid var(--color__base_900);
-	border-color: var(--color__base_900) var(--color__base_900) transparent transparent;
+	border: 1px solid var(--color__base_100);
+	border-color: var(--color__base_100) var(--color__base_100) transparent transparent;
 	border-width: 1px 1px 0 0;
 	content: '';
 	display: block;
@@ -1627,13 +1642,8 @@ footer nav li:not(:last-of-type) {
 	transform: rotateZ(135deg);
 }
 
-.main-navigation .submenu-toggle:hover, .main-navigation .submenu-toggle[aria-expanded='true'] {
-	background-color: var(--color__link);
-	color: var(--color__link_contrast);
-}
-
-.main-navigation .submenu-toggle:hover::after, .main-navigation .submenu-toggle[aria-expanded='true']::after {
-	border-color: var(--color__link_contrast) var(--color__link_contrast) transparent transparent;
+.main-navigation .submenu-toggle:hover {
+	background-color: var(--color__base_700);
 }
 
 /** styles to include for small screen menu display **/
@@ -1856,51 +1866,14 @@ footer nav li:not(:last-of-type) {
 		height: auto;
 	}
 	.main-navigation a {
-		background-color: var(--color__base_300);
+		background-color: var(--color__base_900);
+		color: var(--color__base_100);
 		display: block;
 		padding: calc(var(--type__size) * .5);
 		text-decoration: none;
 	}
-	.main-navigation a:link, .main-navigation a:visited, .main-navigation a:hover, .main-navigation a:active {
-		color: var(--color__base_900);
-	}
 	.main-navigation li:not(:last-of-type) a {
 		margin-right: calc(var(--type__size) * .4);
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.main-navigation .submenu-toggle {
-		background-color: var(--color__base_700);
-		color: var(--color__base_100);
-	}
-	.main-navigation .submenu-toggle::after {
-		border: 1px solid var(--color__base_100);
-		border-color: var(--color__base_100) var(--color__base_100) transparent transparent;
-	}
-	.main-navigation li.current_page_item > a {
-		background-color: var(--color__base_800);
-		color: var(--color__base_100);
-	}
-	.main-navigation .menu-toggle {
-		background-color: var(--color__base_800);
-		color: var(--color__base_100);
-	}
-	.main-navigation .menu-toggle:hover {
-		background-color: var(--color__base_900);
-	}
-	.main-navigation.toggled::before {
-		background-color: var(--color__base_800);
-	}
-	.main-navigation.toggled .menu-toggle::before,
-	.main-navigation.toggled .menu-toggle::after {
-		border-top: 1px solid var(--color__base_100);
-	}
-	.main-navigation li a {
-		background-color: var(--color__base_700);
-	}
-	.main-navigation li a:link, .main-navigation li a:visited, .main-navigation li a:hover, .main-navigation li a:active {
-		color: var(--color__base_100);
 	}
 }
 
