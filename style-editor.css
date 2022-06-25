@@ -2304,8 +2304,8 @@ h1.wp-block-post-title {
 }
 
 .wp-block-image {
-	display: flex;
-	flex-direction: column;
+	display: table;
+	/* for Safari */
 }
 
 /*# sourceMappingURL=style-editor.css.map */
