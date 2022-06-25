@@ -26,9 +26,10 @@ a {
 		outline: 0;
 	}
 	// changes background color
+	// interferes with header
 	&:not(.custom-logo-link):hover {
-		background-color: var(--color__link);
-		color: var(--color__base_900);
+// 		background-color: var(--color__link);
+// 		color: var(--color__base_900);
 
 // 		box-decoration-break: clone;
 // 		-webkit-box-decoration-break: clone;
@@ -123,7 +124,7 @@ h6 a:hover {
 .site-footer a:hover,
 .site-footer a:focus,
 .site-footer a:active {
-	color: var(--color__brand_contrast);
+// 	color: var(--color__brand_contrast);
 }
 
 .arrow {

@@ -108,20 +108,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__hover: #f00;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color__base_900: #111;
-		--color__base_800: #212121;
-		--color__base_700: #333;
-		--color__base_600: #6c6c6c;
-		--color__base_500: #969696;
-		--color__base_400: #d7d7d7;
-		--color__base_300: #e3e3e3;
-		--color__base_200: #efefef;
-		--color__base_100: #fff;
-	}
-}
-
 :root {
 	--type__size: 1.1rem;
 	--type__sans: 'plex-sans', sans-serif;
@@ -1394,11 +1380,6 @@ a:hover, a:active {
 	outline: 0;
 }
 
-a:not(.custom-logo-link):hover {
-	background-color: var(--color__link);
-	color: var(--color__base_900);
-}
-
 h1 a,
 h2 a,
 .dps .title a,
@@ -1407,19 +1388,6 @@ h4 a,
 h5 a,
 h6 a {
 	text-decoration: none;
-}
-
-.site-header a,
-.site-header a:visited,
-.site-header a:hover,
-.site-header a:focus,
-.site-header a:active,
-.site-footer a,
-.site-footer a:visited,
-.site-footer a:hover,
-.site-footer a:focus,
-.site-footer a:active {
-	color: var(--color__brand_contrast);
 }
 
 .arrow, .arrow-right, .arrow-left {
@@ -1661,6 +1629,11 @@ footer nav li:not(:last-of-type) {
 
 .main-navigation .submenu-toggle:hover, .main-navigation .submenu-toggle[aria-expanded='true'] {
 	background-color: var(--color__link);
+	color: var(--color__link_contrast);
+}
+
+.main-navigation .submenu-toggle:hover::after, .main-navigation .submenu-toggle[aria-expanded='true']::after {
+	border-color: var(--color__link_contrast) var(--color__link_contrast) transparent transparent;
 }
 
 /** styles to include for small screen menu display **/

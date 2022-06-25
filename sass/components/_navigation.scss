@@ -113,6 +113,13 @@ footer nav {
 		&:hover,
 		&[aria-expanded='true'] {
 			background-color: var(--color__link);
+			color: var(--color__link_contrast);
+		}
+
+		&:hover::after,
+		&[aria-expanded='true']::after {
+// 			background-color: var(--color__link);
+			border-color: var(--color__link_contrast) var(--color__link_contrast) transparent transparent;
 		}
 		
 		
