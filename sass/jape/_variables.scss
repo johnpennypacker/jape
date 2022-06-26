@@ -9,22 +9,22 @@
 	--color__base_800: 248, 243, 239;
 	--color__base_900: 255, 250, 246;
 
-	--color__brand: #cc0000;
-	--color__brand_contrast: #fff;
-	--color__accent: #1f7789;
-	--color__accent_contrast: #fff;
-	--color__highlight: #f4d751;
-	--color__highlight_text: #000;
+	--color__brand: 204, 0, 0;
+	--color__brand_contrast: 255, 255, 255;
+	--color__accent: 57, 119, 212;
+	--color__accent_contrast: 255, 255, 255;
+	--color__highlight: 244, 215, 81;
+	--color__highlight_text: 0, 0, 0;
 	
 	--color__message: rgba(var(--color__base_500),1);
-	--color__succcess: #00a32a;
-	--color__error: #d63638;
+	--color__succcess: 0, 163, 42;
+	--color__error: 214, 54, 56;
 	
-	--color__link: var(--color__brand);
-	--color__link_contrast: var(--color__brand_contrast);
+	--color__link: rgba(var(--color__brand),1);
+	--color__link_contrast: rgba(var(--color__brand_contrast),1);
  	--color__visited: rgba(var(--color__base_100),1);
-	--color__hover: #f00;
-	--color__hover_contrast: var(--color__brand_contrast);
+	--color__hover: 255, 0, 0;
+	--color__hover_contrast: rgba(var(--color__brand_contrast),1);
 // 	--color__active: rgba(var(--color__base_100),1);
 	
 }
@@ -42,6 +42,7 @@
 		--color__base_100: 255, 250, 246;
 	}
 }
+
 
 :root {
 	--type__size: 1.1rem;

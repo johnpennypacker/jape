@@ -93,20 +93,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__base_700: 226, 221, 217;
 	--color__base_800: 248, 243, 239;
 	--color__base_900: 255, 250, 246;
-	--color__brand: #cc0000;
-	--color__brand_contrast: #fff;
-	--color__accent: #1f7789;
-	--color__accent_contrast: #fff;
-	--color__highlight: #f4d751;
-	--color__highlight_text: #000;
+	--color__brand: 204, 0, 0;
+	--color__brand_contrast: 255, 255, 255;
+	--color__accent: 57, 119, 212;
+	--color__accent_contrast: 255, 255, 255;
+	--color__highlight: 244, 215, 81;
+	--color__highlight_text: 0, 0, 0;
 	--color__message: rgba(var(--color__base_500),1);
-	--color__succcess: #00a32a;
-	--color__error: #d63638;
-	--color__link: var(--color__brand);
-	--color__link_contrast: var(--color__brand_contrast);
+	--color__succcess: 0, 163, 42;
+	--color__error: 214, 54, 56;
+	--color__link: rgba(var(--color__brand),1);
+	--color__link_contrast: rgba(var(--color__brand_contrast),1);
 	--color__visited: rgba(var(--color__base_100),1);
-	--color__hover: #f00;
-	--color__hover_contrast: var(--color__brand_contrast);
+	--color__hover: 255, 0, 0;
+	--color__hover_contrast: rgba(var(--color__brand_contrast),1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -329,8 +329,8 @@ input[type="submit"] {
 .wp-block-button > div:hover, input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"] {
-	background-color: var(--color__hover) !important;
-	border-color: var(--color__hover);
+	background-color: rgba(var(--color__hover), 1) !important;
+	border-color: rgba(var(--color__hover), 1);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	color: var(--color__hover_contrast) !important;
 	transform: translateY(-1px);
@@ -432,7 +432,7 @@ input:hover[type="submit"] {
 }
 
 .login #login_error {
-	border-left-color: var(--color__error);
+	border-left-color: rgba(var(--color__error), 1);
 }
 
 .login #loginform p.submit, .login #loginform .dps .submit.excerpt, .dps .login #loginform .submit.excerpt, .login .login-action-lostpassword p.submit, .login .login-action-lostpassword .dps .submit.excerpt, .dps .login .login-action-lostpassword .submit.excerpt {
@@ -491,8 +491,8 @@ input:hover[type="submit"] {
 .login input.wp-hide-pw:focus[type="reset"],
 .login input.wp-hide-pw:focus[type="submit"] {
 	background: 0 0;
-	border-color: var(--color__message);
-	box-shadow: 0 0 0 1px var(--color__message);
+	border-color: rgba(var(--color__message), 1);
+	box-shadow: 0 0 0 1px rgba(var(--color__message), 1);
 	outline: 2px solid transparent;
 }
 
@@ -1243,8 +1243,8 @@ samp {
 var {
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
-	background-color: rgba(255, 255, 255, 0.8);
-	color: var(--color__accent);
+	background-color: rgba(var(--color__accent_contrast), 0.8);
+	color: rgba(var(--color__accent), 1);
 	font-weight: bold;
 }
 
@@ -1260,8 +1260,8 @@ acronym {
 
 mark,
 ins {
-	background-color: var(--color__highlight);
-	color: var(--color__highlight_text);
+	background-color: rgba(var(--color__highlight), 1);
+	color: rgba(var(--color__highlight_text), 1);
 	text-decoration: none;
 }
 

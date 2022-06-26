@@ -104,8 +104,8 @@ samp {
 var {
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
-	background-color: rgba(255,255,255,0.8);
-	color: var(--color__accent);
+	background-color: rgba(var(--color__accent_contrast),0.8);
+	color: rgba(var(--color__accent),1);
 	font-weight: bold;
 }
 samp {
@@ -120,8 +120,8 @@ acronym {
 
 mark,
 ins {
-	background-color: var(--color__highlight);
-	color: var(--color__highlight_text);
+	background-color: rgba(var(--color__highlight),1);
+	color: rgba(var(--color__highlight_text),1);
 	text-decoration: none;
 }
 

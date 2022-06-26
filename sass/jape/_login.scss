@@ -31,7 +31,7 @@
 	}
 
 	#login_error {
-		border-left-color: var(--color__error);
+		border-left-color: rgba(var(--color__error),1);
 	}
 	#loginform p.submit, .login-action-lostpassword p.submit {
 			border: none;
@@ -77,8 +77,8 @@
 		}
 		&:focus {
 			background: 0 0;
-			border-color: var(--color__message);
-			box-shadow: 0 0 0 1px var(--color__message);
+			border-color: rgba(var(--color__message),1);
+			box-shadow: 0 0 0 1px rgba(var(--color__message),1);
 			outline:2px solid transparent
 		}
 
