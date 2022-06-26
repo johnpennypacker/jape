@@ -48,10 +48,10 @@
 	@extend .button;
 }
 .wp-block-button.is-style-outline a {
-	background: var(--color__base_900) !important;
+	background: rgba(var(--color__base_900),1) !important;
 	border-width: 2px;
 	&:hover {
-		background: var(--color__base_800) !important;
+		background: rgba(var(--color__base_800),1) !important;
 	}
 }
 .block-editor-button-block-appender {

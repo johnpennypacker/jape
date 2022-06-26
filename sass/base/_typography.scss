@@ -17,7 +17,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: var(--color__base_200);
+	color: rgba(var(--color__base_200),1);
   font-family: var(--type__sans);
 
 	font-size: var(--type__size);
@@ -84,7 +84,7 @@ address {
 }
 
 pre {
-	background-color: var(--color__base_900);
+	background-color: rgba(var(--color__base_900),1);
   font-family: var(--type__mono);
 	line-height: 1.6;
 	margin-bottom: calc(var(--type__size) * 1.5);
@@ -114,7 +114,7 @@ samp {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted var(--color__base_400);
+	border-bottom: 1px dotted rgba(var(--color__base_400),1);
 	cursor: help;
 }
 

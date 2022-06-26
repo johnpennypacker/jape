@@ -7,12 +7,12 @@ html {
 }
 
 body {
-	background-color: var(--color__base_800);
+	background-color: rgba(var(--color__base_800),1);
 }
 
 header.site-header {
-	background-color: var(--color__base_900);
-	color: var(--color__base_100);
+	background-color: rgba(var(--color__base_900),1);
+	color: rgba(var(--color__base_100),1);
 	margin: 0 0 calc(var(--type__size) * 1); 
 	padding: var(--type__size) var(--type__size) 0;
 }
@@ -50,8 +50,8 @@ main,
 }
 
 footer.site-footer {
-	background-color: var(--color__base_900);
-	color: var(--color__base_100);
+	background-color: rgba(var(--color__base_900),1);
+	color: rgba(var(--color__base_100),1);
 	margin: 0; 
 	padding: var(--type__size);
 }

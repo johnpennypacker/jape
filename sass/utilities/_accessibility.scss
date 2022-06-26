@@ -16,12 +16,12 @@
 }
 
 .screen-reader-text:focus {
-	background-color: var(--color__base_800);
+	background-color: rgba(var(--color__base_800),1);
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: var(--color__base_200);
+	color: rgba(var(--color__base_200),1);
 	display: block;
 	font-size: 0.875rem;
 	font-weight: 700;

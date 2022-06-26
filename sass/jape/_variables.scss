@@ -1,13 +1,13 @@
 :root {
-	--color__base_100: #1a1511;
-	--color__base_200: #27221e;
-	--color__base_300: #38332f;
-	--color__base_400: #6f6a66;
-	--color__base_500: #98938f;
-	--color__base_600: #d7d2ce;
-	--color__base_700: #e2ddd9;
-	--color__base_800: #f8f3ef;
-	--color__base_900: #fffaf6;
+	--color__base_100: 26, 21, 17;
+	--color__base_200: 39, 34, 30;
+	--color__base_300: 56, 51, 47;
+	--color__base_400: 111, 106, 102;
+	--color__base_500: 152, 147, 143;
+	--color__base_600: 215, 210, 206;
+	--color__base_700: 226, 221, 217;
+	--color__base_800: 248, 243, 239;
+	--color__base_900: 255, 250, 246;
 
 	--color__brand: #cc0000;
 	--color__brand_contrast: #fff;
@@ -16,33 +16,32 @@
 	--color__highlight: #f4d751;
 	--color__highlight_text: #000;
 	
-	--color__message: var(--color__base_500);
+	--color__message: rgba(var(--color__base_500),1);
 	--color__succcess: #00a32a;
 	--color__error: #d63638;
 	
 	--color__link: var(--color__brand);
 	--color__link_contrast: var(--color__brand_contrast);
- 	--color__visited: var(--color__base_100);
+ 	--color__visited: rgba(var(--color__base_100),1);
 	--color__hover: #f00;
 	--color__hover_contrast: var(--color__brand_contrast);
-// 	--color__active: var(--color__base_100);
+// 	--color__active: rgba(var(--color__base_100),1);
 	
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color__base_900: #1a1511;
-		--color__base_800: #27221e;
-		--color__base_700: #38332f;
-		--color__base_600: #6f6a66;
-		--color__base_500: #98938f;
-		--color__base_400: #d7d2ce;
-		--color__base_300: #e2ddd9;
-		--color__base_200: #f8f3ef;
-		--color__base_100: #fffaf6;
+		--color__base_900: 26, 21, 17;
+		--color__base_800: 39, 34, 30;
+		--color__base_700: 56, 51, 47;
+		--color__base_600: 111, 106, 102;
+		--color__base_500: 152, 147, 143;
+		--color__base_400: 215, 210, 206;
+		--color__base_300: 226, 221, 217;
+		--color__base_200: 248, 243, 239;
+		--color__base_100: 255, 250, 246;
 	}
 }
-
 
 :root {
 	--type__size: 1.1rem;

@@ -21,14 +21,14 @@
 .post-thumbnail, 
 .wp-block-image,
 .wp-block-embed {
-// 	background-color: var(--color__base_800);
+// 	background-color: rgba(var(--color__base_800),1);
 	display: block;
 	margin: 0 0 calc(var(--type__size) * 1.5);
 	img, iframe {
 		display: block;
 	}
 	figcaption {
-		background-color: var(--color__base_800);
+		background-color: rgba(var(--color__base_800),1);
 		font-size: calc(var(--type__size) * .85);
 		margin: 0;
 		padding: calc(var(--type__size) * .5) calc(var(--type__size) * .75) calc(var(--type__size) * .5);

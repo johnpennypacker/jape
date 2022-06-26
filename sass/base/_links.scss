@@ -29,7 +29,7 @@ a {
 	// interferes with header
 	&:not(.custom-logo-link):hover {
 // 		background-color: var(--color__link);
-// 		color: var(--color__base_900);
+// 		color: rgba(var(--color__base_900),1);
 
 // 		box-decoration-break: clone;
 // 		-webkit-box-decoration-break: clone;
@@ -93,7 +93,7 @@ a {
 // 
 //   &:hover {
 //     background-position-y: 100%;
-//  		color: var(--color__base_900);
+//  		color: rgba(var(--color__base_900),1);
 //   }
 // }
 
