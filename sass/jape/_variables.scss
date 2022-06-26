@@ -1,13 +1,13 @@
 :root {
 	--color__base_100: #000;
-	--color__base_200: #212121;
-	--color__base_300: #333;
-	--color__base_400: #6c6c6c;
-	--color__base_500: #969696;
-	--color__base_600: #d7d7d7;
-	--color__base_700: #e3e3e3;
-	--color__base_800: #fafafa;
-	--color__base_900: #fff;
+	--color__base_200: #27221e;
+	--color__base_300: #38332f;
+	--color__base_400: #6f6a66;
+	--color__base_500: #98938f;
+	--color__base_600: #d7d2ce;
+	--color__base_700: #e2ddd9;
+	--color__base_800: #f8f3ef;
+	--color__base_900: #fffaf6;
 
 	--color__brand: #cc0000;
 	--color__brand_contrast: #fff;
@@ -31,15 +31,15 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color__base_900: #111;
-		--color__base_800: #212121;
-		--color__base_700: #333;
-		--color__base_600: #6c6c6c;
-		--color__base_500: #969696;
-		--color__base_400: #d7d7d7;
-		--color__base_300: #e3e3e3;
-		--color__base_200: #efefef;
-		--color__base_100: #fff;
+		--color__base_900: #1a1511;
+		--color__base_800: #27221e;
+		--color__base_700: #38332f;
+		--color__base_600: #6f6a66;
+		--color__base_500: #98938f;
+		--color__base_400: #d7d2ce;
+		--color__base_300: #e2ddd9;
+		--color__base_200: #f8f3ef;
+		--color__base_100: #fffaf6;
 	}
 }
 
