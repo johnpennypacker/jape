@@ -84,7 +84,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 :root {
-	--color__base_100: #000;
+	--color__base_100: #1a1511;
 	--color__base_200: #27221e;
 	--color__base_300: #38332f;
 	--color__base_400: #6f6a66;
@@ -187,18 +187,10 @@ main,
 }
 
 footer.site-footer {
+	background-color: var(--color__base_900);
+	color: var(--color__base_100);
 	margin: 0;
 	padding: var(--type__size);
-	background-color: var(--color__base_100);
-	color: var(--color__base_900);
-}
-
-@media (prefers-color-scheme: dark) {
-	footer.site-footer,
-	header.site-header.minimal {
-		background-color: var(--color__base_900);
-		color: var(--color__base_100);
-	}
 }
 
 .site-branding {
@@ -232,10 +224,6 @@ footer.site-footer {
 
 .site-title a:hover {
 	text-decoration: underline;
-}
-
-.site-header.minimal {
-	background-color: var(--color__base_100);
 }
 
 .site-header.minimal .site-branding {

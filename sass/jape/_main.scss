@@ -50,19 +50,10 @@ main,
 }
 
 footer.site-footer {
+	background-color: var(--color__base_900);
+	color: var(--color__base_100);
 	margin: 0; 
 	padding: var(--type__size);
-	background-color: var(--color__base_100);
-	color: var(--color__base_900);
-}
-
-
-@media (prefers-color-scheme: dark) {
-	footer.site-footer,
-	header.site-header.minimal {
-		background-color: var(--color__base_900);
-		color: var(--color__base_100);
-	}
 }
 
 
@@ -99,7 +90,6 @@ footer.site-footer {
 }
 
 .site-header.minimal {
-	background-color: var(--color__base_100);
 	.site-branding {
 		display: block;
 	}
