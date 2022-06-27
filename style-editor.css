@@ -2243,4 +2243,9 @@ h1.wp-block-post-title {
 	/* for Safari */
 }
 
+.wp-block-image figcaption {
+	position: relative;
+	transform: translateY(-7px);
+}
+
 /*# sourceMappingURL=style-editor.css.map */

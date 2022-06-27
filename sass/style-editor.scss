@@ -89,4 +89,8 @@ h1.wp-block-post-title {
 
 .wp-block-image {
 	display: table; /* for Safari */
+	figcaption {
+		position: relative;
+		transform: translateY(-7px);
+	}
 }
