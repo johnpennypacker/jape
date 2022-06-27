@@ -99,14 +99,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--color__accent_contrast: 255, 255, 255;
 	--color__highlight: 244, 215, 81;
 	--color__highlight_text: 0, 0, 0;
-	--color__message: rgba(var(--color__base_500),1);
+	--color__message: var(--color__base_500);
 	--color__succcess: 0, 163, 42;
 	--color__error: 214, 54, 56;
-	--color__link: rgba(var(--color__brand),1);
-	--color__link_contrast: rgba(var(--color__brand_contrast),1);
-	--color__visited: rgba(var(--color__base_100),1);
+	--color__link: var(--color__brand);
+	--color__link_contrast: var(--color__brand_contrast);
+	--color__visited: 214,99,73;
+	--color__visited_contrast: var(--color__brand_contrast);
 	--color__hover: 255, 0, 0;
-	--color__hover_contrast: rgba(var(--color__brand_contrast),1);
+	--color__hover_contrast: var(--color__brand_contrast);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -314,10 +315,10 @@ footer.site-footer {
 .wp-block-button > div, input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 2px solid var(--color__link);
+	border: 2px solid rgba(var(--color__link), 1);
 	border-radius: 3px;
-	background-color: var(--color__link);
-	color: var(--color__link_contrast);
+	background-color: rgba(var(--color__link), 1);
+	color: rgba(var(--color__link_contrast), 1);
 	cursor: pointer;
 	font-size: var(--type__size);
 	line-height: 1;
@@ -332,7 +333,7 @@ input:hover[type="submit"] {
 	background-color: rgba(var(--color__hover), 1) !important;
 	border-color: rgba(var(--color__hover), 1);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-	color: var(--color__hover_contrast) !important;
+	color: rgba(var(--color__hover_contrast), 1) !important;
 	transform: translateY(-1px);
 }
 
@@ -418,7 +419,7 @@ input:hover[type="submit"] {
 .login #login_error,
 .login .message,
 .login .success {
-	border-left: 4px solid var(--color__message);
+	border-left: 4px solid rgba(var(--color__message), 1);
 	padding: var(--type__size);
 	margin-left: 0;
 	margin-bottom: calc(var(--type__size) * 1.5);
@@ -1362,12 +1363,12 @@ tfoot td {
 /* Links
 --------------------------------------------- */
 a {
-	color: var(--color__link);
+	color: rgba(var(--color__link), 1);
 	transition: all .2s ease-in-out;
 }
 
 a:visited {
-	color: var(--color__visited);
+	color: rgba(var(--color__visited), 1);
 }
 
 a:hover, a:focus, a:active {
@@ -1400,7 +1401,7 @@ h6 a {
 .arrow:before, .arrow-right:before, .arrow-left:before {
 	content: '';
 	display: block;
-	border-top: 2px solid var(--color__link);
+	border-top: 2px solid rgba(var(--color__link), 1);
 	height: 0;
 	width: 0;
 	position: absolute;
@@ -1411,7 +1412,7 @@ h6 a {
 .arrow:after, .arrow-right:after, .arrow-left:after {
 	content: '';
 	display: block;
-	border: 2px solid var(--color__link);
+	border: 2px solid rgba(var(--color__link), 1);
 	border-width: 2px 2px 0 0;
 	transform: translateX(0) rotateZ(45deg);
 	transition: all .2s ease-in-out;

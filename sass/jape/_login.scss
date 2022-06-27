@@ -18,7 +18,7 @@
 	#login_error,
 	.message,
 	.success {
-		border-left: 4px solid var(--color__message);
+		border-left: 4px solid rgba(var(--color__message), 1);
 		padding: var(--type__size);
 		margin-left: 0;
 		margin-bottom: calc(var(--type__size) * 1.5);

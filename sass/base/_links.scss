@@ -1,10 +1,10 @@
 /* Links
 --------------------------------------------- */
 a {
-	color: var(--color__link);
+	color: rgba(var(--color__link),1);
 	transition: all .2s ease-in-out;
 	&:visited {
-		color: var(--color__visited);
+		color: rgba(var(--color__visited),1);
 	}
 // 	&:hover {
 // 		/* this is fun because it only works on block level elements */
@@ -28,12 +28,12 @@ a {
 	// changes background color
 	// interferes with header
 	&:not(.custom-logo-link):hover {
-// 		background-color: var(--color__link);
+// 		background-color: rgba(var(--color__link),1);
 // 		color: rgba(var(--color__base_900),1);
 
 // 		box-decoration-break: clone;
 // 		-webkit-box-decoration-break: clone;
-//  		box-shadow: 0 0 0 calc(var(--type__size) * .5) var(--color__link);
+//  		box-shadow: 0 0 0 calc(var(--type__size) * .5) rgba(var(--color__link),1);
 	}
 }
 
@@ -132,7 +132,7 @@ h6 a:hover {
 	&:before {
 		content: '';
 		display: block;
-		border-top: 2px solid var(--color__link);
+		border-top: 2px solid rgba(var(--color__link),1);
 		height: 0;
 		width: 0;
 		position: absolute;
@@ -142,7 +142,7 @@ h6 a:hover {
 	&:after {
 		content: '';
 		display: block;
-		border: 2px solid var(--color__link);
+		border: 2px solid rgba(var(--color__link),1);
 		border-width: 2px 2px 0 0;
 		transform: translateX(0) rotateZ(45deg);
 		transition: all .2s ease-in-out;
