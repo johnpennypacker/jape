@@ -121,6 +121,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 		--color__base_300: 226, 221, 217;
 		--color__base_200: 248, 243, 239;
 		--color__base_100: 255, 250, 246;
+		--color__link: 255, 64, 64;
+		--color__visited: 214,102,78;
 	}
 }
 
