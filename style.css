@@ -324,7 +324,7 @@ input[type="submit"] {
 	cursor: pointer;
 	font-size: var(--type__size);
 	line-height: 1;
-	padding: 0.6em 1em;
+	padding: calc(var(--type__size) * .75) calc(var(--type__size) * 1.25);
 	transition: all .2s ease-in-out;
 }
 
@@ -334,7 +334,7 @@ input:hover[type="reset"],
 input:hover[type="submit"] {
 	background-color: rgba(var(--color__hover), 1) !important;
 	border-color: rgba(var(--color__hover), 1);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 1px rgba(var(--color__base_900), 0.5);
 	color: rgba(var(--color__hover_contrast), 1) !important;
 	transform: translateY(-1px);
 }
@@ -365,6 +365,10 @@ input:hover[type="submit"] {
 
 .wp-block-query li {
 	list-style: none;
+}
+
+.wp-block-query .wp-block-column {
+	margin: 0 0 calc(var(--type__size) * .5);
 }
 
 .wp-block-query .wp-block-post {

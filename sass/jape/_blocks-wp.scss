@@ -31,12 +31,12 @@
 	cursor: pointer;
 	font-size: var(--type__size);
 	line-height: 1;
-	padding: 0.6em 1em;
+	padding: calc(var(--type__size) * .75) calc(var(--type__size) * 1.25);
 	transition: all .2s ease-in-out;
 	&:hover {
 		background-color: rgba(var(--color__hover),1) !important;
 		border-color: rgba(var(--color__hover),1);
-		box-shadow: 0 1px 1px rgba(0,0,0,.5);
+		box-shadow: 0 1px 1px rgba(var(--color__base_900),.5);
 		color: rgba(var(--color__hover_contrast),1) !important;
 		transform: translateY(-1px);
 	}
@@ -78,6 +78,9 @@
 	}
 	li {
 		list-style: none;
+	}
+	.wp-block-column {
+		margin: 0 0 calc(var(--type__size) * .5);
 	}
 	.wp-block-post {
 		margin-bottom: calc(var(--type__size) * 4);
