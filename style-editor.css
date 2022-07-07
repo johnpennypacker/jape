@@ -317,10 +317,10 @@ footer.site-footer {
 .wp-block-button > div, input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 2px solid rgba(var(--color__link), 1);
+	border: 2px solid rgba(var(--color__brand), 1);
 	border-radius: 3px;
-	background-color: rgba(var(--color__link), 1);
-	color: rgba(var(--color__link_contrast), 1);
+	background-color: rgba(var(--color__brand), 1);
+	color: rgba(var(--color__brand_contrast), 1);
 	cursor: pointer;
 	font-size: var(--type__size);
 	line-height: 1;
