@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-  "version": 2,
-  "patterns": [],
+	"version": 2,
+	"patterns": [],
 	"styles": {
 		"spacing": {
 			"blockGap": "calc(var(--type__size) * 2)"
 		}
 	},
-  "settings": {
+	"settings": {
 		"appearanceTools": true,
 		"border": {
 			"radius": false
@@ -52,47 +52,47 @@
 			],
 			"fontFamilies": []
 		},
-    "blocks": {
-      "core/button": {
-        "border": {
-          "radius": false
-        },
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": false
+				},
 				"typography": {
 					"customFontSize": false,
 					"fontSizes": []
 				},
-        "width": {
-        	"custom": false
-        }
-      },
-      "core/heading": {
+				"width": {
+					"custom": false
+				}
+			},
+			"core/heading": {
 				"typography": {
 					"customFontSize": false,
 					"fontSizes": []
 				}
-      },
-      "core/pullquote": {
-        "border": {
-          "radius": false,
-          "color": false
-        },
+			},
+			"core/pullquote": {
+				"border": {
+					"radius": false,
+					"color": false
+				},
 				"typography": {
 					"customFontSize": false,
 					"fontSizes": []
 				}
-      },
-      "core/quote": {
+			},
+			"core/quote": {
 				"typography": {
 					"customFontSize": false,
 					"fontSizes": []
 				}
-      },
-      "core/table": {
+			},
+			"core/table": {
 				"typography": {
 					"customFontSize": false,
 					"fontSizes": []
 				}
-      }
-    }
-  }
+			}
+		}
+	}
 }
