@@ -90,7 +90,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --color__highlight: 244, 215, 81;
   --color__highlight_text: 0, 0, 0;
   --color__message: var(--color__base_500);
-  --color__succcess: 0, 163, 42;
+  --color__success: 0, 163, 42;
   --color__error: 214, 54, 56;
   --color__link: var(--color__brand);
   --color__link_contrast: var(--color__brand_contrast);
