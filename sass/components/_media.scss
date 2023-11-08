@@ -34,3 +34,13 @@
 		padding: calc(var(--type__size) * .5) calc(var(--type__size) * .75) calc(var(--type__size) * .5);
 	}
 }
+
+
+.wp-lightbox-overlay {
+	button {
+		fill: rgba(var(--color__base_200),1) !important;
+	}
+	.scrim {
+		background-color: rgba(var(--color__base_900),1) !important;
+	}
+}

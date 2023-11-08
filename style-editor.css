@@ -1861,6 +1861,13 @@ footer nav li:not(:last-of-type) {
   padding: calc(var(--type__size) * 0.5) calc(var(--type__size) * 0.75) calc(var(--type__size) * 0.5);
 }
 
+.wp-lightbox-overlay button {
+  fill: rgba(var(--color__base_200), 1) !important;
+}
+.wp-lightbox-overlay .scrim {
+  background-color: rgba(var(--color__base_900), 1) !important;
+}
+
 /* Captions
 --------------------------------------------- */
 .wp-caption {
